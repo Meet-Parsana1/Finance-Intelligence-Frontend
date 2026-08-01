@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+      <head>
+            <meta charset="UTF-8" />
+            <title>Expenses | Finance Intelligence</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+            <!-- CSS -->
+            <link rel="stylesheet" href="CSS/base.css" />
+            <link rel="stylesheet" href="CSS/theme.css" />
+            <link rel="stylesheet" href="CSS/components.css" />
+            <link rel="stylesheet" href="CSS/layout.css" />
+            <link rel="stylesheet" href="CSS/dashboard.css" />
+
+            <link rel="stylesheet" href="CSS/ledger-pages.css" />
+      </head>
+
+      <body class="ledger-page expenses-page">
+            <!-- ================= iOS 26 FLOATING GLASS NAVBAR ================= -->
+            <nav class="glass-navbar">
+                  <ul class="glass-nav-items">
+                        <li class="nav-item" onclick="window.location.href = 'dashboard.html'">Dashboard</li>
+                        <li class="nav-item active">Expenses</li>
+                        <li class="nav-item" onclick="window.location.href = 'incomes.html'">Income</li>
+                        <!-- <li class="nav-item" onclick="window.location.href = 'reports.html'">Reports</li> -->
+                  </ul>
+            </nav>
+
+            <!-- ================= BRAND HEADER ================= -->
+            <header class="navbar">
+                  <div class="navbar-left">
+                        <span class="navbar-title">Finance Intelligence</span>
+                  </div>
+
+                  <div class="navbar-right">
+                        <button id="theme-toggle" class="theme-btn">
+                              <span class="theme-icon">🌙</span>
+                        </button>
+                  </div>
+            </header>
+
+            <!-- ================= MAIN ================= -->
+            <main class="page-container ledger-container">
+                  <!-- ========= PAGE HEADER ========= -->
+                  <section class="page-header ledger-header">
+                        <div class="ledger-header-copy">
+                              <h2>Expenses</h2>
+                              <p class="page-subtitle">Track, analyze and manage your spending</p>
+                        </div>
+
+                        <div class="ledger-header-actions">
+                              <a href="add-expense.html" class="primary-btn ledger-add-btn">+ Add Expense</a>
+                        </div>
+                  </section>
+
+                  <!-- ========= FILTERS ========= -->
+                  <section class="expense-controls glass ledger-toolbar">
+                        <div class="search-box">
+                              <input type="text" id="expense-search" placeholder="Search expenses..." />
+                        </div>
+
+                        <div class="filter-pills" id="expenseFilterPills">
+                              <button class="filter-pill active" data-filter="all">All</button>
+                              <button class="filter-pill" data-filter="UPI">UPI</button>
+                              <button class="filter-pill" data-filter="Cash">Cash</button>
+                              <button class="filter-pill" data-filter="1000+">₹1000+</button>
+                        </div>
+                        <p class="ledger-filter-scroll-hint" aria-hidden="true">Swipe categories</p>
+
+                        <div class="expense-count" id="expenseCount"></div>
+
+                        <div class="view-toggle">
+                              <button id="card-view" class="view-btn active">⬛</button>
+                              <button id="table-view" class="view-btn">☰</button>
+                        </div>
+                  </section>
+
+                  <!-- ========= CARD VIEW ========= -->
+                  <section class="expense-list" id="expenseList"></section>
+
+                  <!-- ========= TABLE VIEW ========= -->
+                  <section class="expense-table hidden" id="expenseTable">
+                        <div class="ledger-table-scroll">
+                        <table>
+                              <thead>
+                                    <tr>
+                                          <th>Date</th>
+                                          <th>Description</th>
+                                          <th>Category</th>
+                                          <th>Amount</th>
+                                          <th>Mode</th>
+                                          <th>Actions</th>
+                                    </tr>
+                              </thead>
+
+                              <tbody id="expenseTableBody"></tbody>
+                        </table>
+                        </div>
+                        <p class="ledger-table-scroll-hint" aria-hidden="true">Swipe table to view all columns</p>
+                  </section>
+
+                  <section class="ledger-pagination" id="expensePagination">
+                        <button type="button" class="pagination-btn" id="paginationPrev">Previous</button>
+                        <p class="pagination-status" id="paginationStatus">Showing 0-0 of 0</p>
+                        <button type="button" class="pagination-btn" id="paginationNext">Next 10</button>
+                  </section>
+            </main>
+
+            <!-- ================= EDIT MODAL ================= -->
+            <div class="modal-overlay hidden" id="editModal">
+                  <div class="modal glass">
+                        <h3>✏️ Edit Expense</h3>
+
+                        <form id="editExpenseForm">
+                              <input type="text" id="editDescription" placeholder="Description" required />
+                              <input type="number" id="editAmount" placeholder="Amount" required />
+
+                              <select id="editCategory" required></select>
+
+                              <select id="editMode" required>
+                                    <option value="UPI">UPI</option>
+                                    <option value="Cash">Cash</option>
+                              </select>
+
+                              <input type="date" id="editDate" required />
+
+                              <div class="modal-actions">
+                                    <button type="button" class="btn ghost" id="cancelEdit">Cancel</button>
+                                    <button type="submit" class="btn primary">Save</button>
+                              </div>
+                        </form>
+                  </div>
+            </div>
+
+            <!-- ================= JS ================= -->
+            <script src="JS/expense-categories.js"></script>
+            <script src="JS/expenses.js"></script>
+            <script src="JS/theme-toggle.js"></script>
+
+            <script src="https://unpkg.com/lucide@latest"></script>
+            <script>
+                  lucide.createIcons();
+            </script>
+      </body>
+</html>

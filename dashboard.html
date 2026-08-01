@@ -1,0 +1,711 @@
+<!doctype html>
+<html lang="en">
+      <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>Dashboard | Finance Intelligence</title>
+
+            <!-- CSS -->
+            <link rel="stylesheet" href="CSS/base.css" />
+            <link rel="stylesheet" href="CSS/theme.css" />
+            <link rel="stylesheet" href="CSS/components.css" />
+            <link rel="stylesheet" href="CSS/layout.css" />
+            <link rel="stylesheet" href="CSS/dashboard.css" />
+
+            <!-- Fonts -->
+            <link
+                  href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@500;600&display=swap"
+                  rel="stylesheet"
+            />
+      </head>
+
+      <body>
+            <!-- Floating Glass Navbar -->
+            <nav class="glass-navbar" id="glassNavbar">
+                  <ul class="glass-nav-items">
+                        <li class="nav-item active" data-page="dashboard">Dashboard</li>
+                        <li class="nav-item" data-page="expenses">Expenses</li>
+                        <li class="nav-item" data-page="income">Income</li>
+                        <!-- <li class="nav-item" data-page="reports">Reports</li> -->
+                        <li onclick="logoutUser()" class="nav-item logout-btn">Logout</li>
+                  </ul>
+            </nav>
+
+            <!-- ================= NAVBAR ================= -->
+            <header class="navbar">
+                  <div class="navbar-left">
+                        <span class="navbar-title">Finance Intelligence</span>
+                  </div>
+                  <div class="navbar-right">
+                        <button id="theme-toggle" class="theme-btn">
+                              <span class="theme-icon">🌙</span>
+                        </button>
+                  </div>
+            </header>
+
+            <!-- ===== ONBOARDING MESSAGE ===== -->
+            <section class="onboarding-message card" id="onboardingMessage">
+                  <h3 id="welcomeTitle">Welcome 👋</h3>
+                  <p id="welcomeText">Let’s get started.</p>
+            </section>
+
+            <!-- ================= DASHBOARD ================= -->
+            <main class="container">
+                  <!-- ===== KPI CARDS ===== -->
+                  <section class="dashboard-kpis" data-role="student salaried msme">
+                        <div class="card kpi-card">
+                              <h4 id="kpiCardOneTitle">Total Spent</h4>
+                              <div class="kpi-card__context">
+                                    <p id="kpiCardOneWindow">Waiting for business history</p>
+                                    <p id="kpiCardOneMeta">Expense load will appear here.</p>
+                                    <p id="kpiCardOneInsight">This card will explain how heavy your cost base is.</p>
+                              </div>
+                              <h2 id="totalSpent">₹ 0</h2>
+                        </div>
+
+                        <div class="card kpi-card">
+                              <h4 id="kpiCardTwoTitle">Top Category</h4>
+                              <div class="kpi-card__context">
+                                    <p id="kpiCardTwoWindow">Waiting for business history</p>
+                                    <p id="kpiCardTwoMeta">Revenue driver context will appear here.</p>
+                                    <p id="kpiCardTwoInsight">This card will highlight the strongest income source.</p>
+                              </div>
+                              <h2 id="topCategory">—</h2>
+                        </div>
+
+                        <div class="card kpi-card" data-role="student salaried">
+                              <h4>This Month</h4>
+                              <div class="kpi-card__context">
+                                    <p id="kpiCardMonthWindow">Waiting for monthly activity</p>
+                                    <p id="kpiCardMonthMeta">This card will define the exact month being tracked.</p>
+                                    <p id="kpiCardMonthInsight">It will explain how much was spent in that month.</p>
+                              </div>
+                              <h2 id="thisMonthTotal">₹ 0</h2>
+                        </div>
+
+                        <div class="card kpi-card" data-role="msme">
+                              <h4 id="kpiCardThreeTitle">Operating Profit</h4>
+                              <div class="kpi-card__context">
+                                    <p id="kpiCardThreeWindow">Waiting for business history</p>
+                                    <p id="kpiCardThreeMeta">Profit margin context will appear here.</p>
+                                    <p id="kpiCardThreeInsight">This card will explain the current business outcome.</p>
+                              </div>
+                              <h2 id="operatingProfit">₹ 0</h2>
+                        </div>
+                  </section>
+
+                  <!-- ===== STUDENT SECTION ===== -->
+
+                  <section class="card student-launchpad hidden" id="studentLaunchpad" data-role="student">
+                        <div class="student-launchpad__badge">Student Setup</div>
+                        <div class="student-launchpad__content">
+                              <div>
+                                    <h3>Set your budget and start tracking smartly</h3>
+                                    <p id="studentLaunchpadCopy">
+                                          Set a monthly budget and add your first expenses or income so your dashboard can begin tracking spending, remaining balance, and student insights.
+                                    </p>
+                              </div>
+
+                              <div class="student-launchpad__actions">
+                                    <a href="add-expense.html" class="student-launchpad__btn">Add First Expense</a>
+                                    <a href="add-income.html" class="student-launchpad__btn student-launchpad__btn--ghost">
+                                          Add First Income
+                                    </a>
+                              </div>
+                        </div>
+
+                        <div class="student-launchpad__steps">
+                              <article class="student-launchpad__step">
+                                    <span>01</span>
+                                    <strong>Set a budget</strong>
+                                    <p>Define your monthly limit so the dashboard can measure how much room you have left.</p>
+                              </article>
+                              <article class="student-launchpad__step">
+                                    <span>02</span>
+                                    <strong>Track expenses</strong>
+                                    <p>Log food, travel, education, and other student costs as they happen.</p>
+                              </article>
+                              <article class="student-launchpad__step">
+                                    <span>03</span>
+                                    <strong>Watch your trend</strong>
+                                    <p>Your remaining budget, insights, and charts improve as your history grows.</p>
+                              </article>
+                        </div>
+                  </section>
+
+                  <section class="card student-budget" data-role="student">
+                        <h4>Monthly Budget</h4>
+
+                        <p>Total Budget: <strong id="studentBudget">Not Set</strong></p>
+                        <p>Spent: <strong id="studentSpent">₹0</strong></p>
+                        <p>Remaining: <strong id="studentRemaining">₹0</strong></p>
+
+                        <div class="budget-progress">
+                              <div id="budgetBar"></div>
+                        </div>
+
+                        <div class="budget-input">
+                              <input type="number" id="budgetInput" placeholder="Enter monthly budget" />
+                              <button id="budgetBtn" onclick="saveBudget()">Set Budget</button>
+                        </div>
+
+                        <p id="budgetStatus" class="budget-status"></p>
+                  </section>
+
+                  <section class="card student-insight" data-role="student">
+                        <h4>Spending Insight</h4>
+                        <p id="studentInsight">Analyzing your spending...</p>
+                  </section>
+
+                  <!-- ===== SALARIED SECTION ===== -->
+                  <section class="card kpi-card savings-card" data-role="salaried">
+                        <h4>Savings Rate</h4>
+                        <div class="kpi-card__context">
+                              <p id="savingsRateWindow">Waiting for salary history</p>
+                              <p id="savingsRateMeta">Savings context will appear here.</p>
+                              <p id="savingsRateInsight">This card will explain how much income you kept.</p>
+                        </div>
+
+                        <p id="salaryRateText">Calculating...</p>
+
+                        <div class="savings-bar">
+                              <div id="savingsProgress"></div>
+                        </div>
+                  </section>
+
+                  <section class="card salary-launchpad hidden" id="salaryLaunchpad" data-role="salaried">
+                        <div class="salary-launchpad__badge">Salary Setup</div>
+                        <div class="salary-launchpad__content">
+                              <div>
+                                    <h3>Build your month-to-date money view</h3>
+                                    <p id="salaryLaunchpadCopy">
+                                          Add your salary income and day-to-day expenses so this dashboard can start
+                                          tracking spending, savings rate, and monthly profit or loss with clarity.
+                                    </p>
+                              </div>
+
+                              <div class="salary-launchpad__actions">
+                                    <a href="add-income.html" class="salary-launchpad__btn">Add First Income</a>
+                                    <a href="add-expense.html" class="salary-launchpad__btn salary-launchpad__btn--ghost">
+                                          Add First Expense
+                                    </a>
+                              </div>
+                        </div>
+
+                        <div class="salary-launchpad__steps">
+                              <article class="salary-launchpad__step">
+                                    <span>01</span>
+                                    <strong>Record salary</strong>
+                                    <p>Log your first paycheck, bonus, or other current-month income.</p>
+                              </article>
+                              <article class="salary-launchpad__step">
+                                    <span>02</span>
+                                    <strong>Track spending</strong>
+                                    <p>Add living costs as they happen so month-to-date totals stay reliable.</p>
+                              </article>
+                              <article class="salary-launchpad__step">
+                                    <span>03</span>
+                                    <strong>Measure savings</strong>
+                                    <p>The dashboard will then calculate your savings rate and monthly balance automatically.</p>
+                              </article>
+                        </div>
+                  </section>
+
+                  <!-- ===== MSME SECTION ===== -->
+                  <section class="card cashflow-card" data-role="msme">
+                        <h4>Monthly Cash Flow</h4>
+                        <p id="cashFlowSubtitle" class="subtle-text">Based on current month activity</p>
+
+                        <div class="cashflow-grid">
+                              <div class="cashflow-item">
+                                    <span>Cash In</span>
+                                    <strong id="cashIn" class="cash-in">₹0</strong>
+                              </div>
+
+                              <div class="cashflow-item">
+                                    <span>Cash Out</span>
+                                    <strong id="cashOut" class="cash-out">₹0</strong>
+                              </div>
+
+                              <div class="cashflow-item highlight">
+                                    <span>Net Cash</span>
+                                    <strong id="cashNet" class="cash-net">₹0</strong>
+                              </div>
+                        </div>
+                  </section>
+
+                  <section class="card msme-launchpad hidden" id="msmeLaunchpad" data-role="msme">
+                        <div class="msme-launchpad__badge">MSME Launchpad</div>
+                        <div class="msme-launchpad__content">
+                              <div>
+                                    <h3>Your business workspace is ready</h3>
+                                    <p id="msmeLaunchpadCopy">
+                                          Start by recording your first business income and expense so the dashboard can
+                                          unlock cash flow, profitability, and operating insights.
+                                    </p>
+                              </div>
+
+                              <div class="msme-launchpad__actions">
+                                    <a href="add-income.html" class="msme-launchpad__btn">Add First Income</a>
+                                    <a href="add-expense.html" class="msme-launchpad__btn msme-launchpad__btn--ghost">
+                                          Add First Expense
+                                    </a>
+                              </div>
+                        </div>
+
+                        <div class="msme-launchpad__steps">
+                              <article class="msme-launchpad__step">
+                                    <span>01</span>
+                                    <strong>Capture revenue</strong>
+                                    <p>Log your first sale, client payment, or service revenue entry.</p>
+                              </article>
+                              <article class="msme-launchpad__step">
+                                    <span>02</span>
+                                    <strong>Track business costs</strong>
+                                    <p>Record operating expenses to surface cost centers and margin pressure.</p>
+                              </article>
+                              <article class="msme-launchpad__step">
+                                    <span>03</span>
+                                    <strong>Unlock live analysis</strong>
+                                    <p>Once activity exists, charts, P&amp;L signals, and AI insights begin updating.</p>
+                              </article>
+                        </div>
+                  </section>
+
+                  <!-- ===== EXPENSE CHARTS (ALL ROLES) ===== -->
+                  <section class="dashboard-charts" data-role="student salaried msme">
+                        <div class="card chart-card">
+                              <div class="chart-header">
+                                    <div>
+                                          <h4>Expense Distribution</h4>
+                                          <p id="chartDateRange" class="chart-subtitle"></p>
+                                    </div>
+
+                                    <select id="timeRange" class="chart-dropdown">
+                                          <option value="15d">Last 15 Days</option>
+                                          <option value="1m">Last 1 Month</option>
+                                          <option value="3m" selected>Last 3 Months</option>
+                                          <option value="6m">Last 6 Months</option>
+                                          <option value="1y">Last 1 Year</option>
+                                    </select>
+                              </div>
+                              <div class="chart-wrap">
+                                    <canvas id="categoryChart"></canvas>
+                              </div>
+                        </div>
+
+                        <div class="card chart-card">
+                              <div class="chart-header">
+                                    <div>
+                                          <h4>Monthly Trend</h4>
+                                          <p id="trendDateRange" class="chart-subtitle"></p>
+                                    </div>
+
+                                    <select id="trendRange" class="chart-dropdown">
+                                          <option value="2m">Last 2 Months</option>
+                                          <option value="3m" selected>Last 3 Months</option>
+                                          <option value="6m">Last 6 Months</option>
+                                          <option value="1y">Last 1 Year</option>
+                                    </select>
+                              </div>
+                              <div class="chart-wrap">
+                                    <canvas id="monthlyTrendChart"></canvas>
+                              </div>
+                        </div>
+                  </section>
+
+                  <!-- ===== RECENT EXPENSES ===== -->
+                  <section class="dashboard-recent" data-role="student salaried msme">
+                        <div class="card">
+                              <h4>Recent Expenses</h4>
+                              <div class="recent-table-scroll" tabindex="0" aria-label="Recent expenses table. Swipe horizontally to view all columns.">
+                              <table class="expense-table">
+                                    <thead>
+                                          <tr>
+                                                <th>Description</th>
+                                                <th>Category</th>
+                                                <th>Amount</th>
+                                                <th>Date</th>
+                                          </tr>
+                                    </thead>
+                                    <tbody id="recentExpenses">
+                                          <tr>
+                                                <td colspan="4">No expenses added yet.</td>
+                                          </tr>
+                                    </tbody>
+                              </table>
+                              </div>
+                        </div>
+                        <div class="card">
+                              <h4>Recent Incomes</h4>
+                              <div class="recent-table-scroll" tabindex="0" aria-label="Recent incomes table. Swipe horizontally to view all columns.">
+                              <table class="expense-table">
+                                    <thead>
+                                          <tr>
+                                                <th>Source</th>
+                                                <th>Type</th>
+                                                <th>Amount</th>
+                                                <th>Date</th>
+                                          </tr>
+                                    </thead>
+                                    <tbody id="recentIncomes">
+                                          <tr>
+                                                <td colspan="4">No incomes added yet.</td>
+                                          </tr>
+                                    </tbody>
+                              </table>
+                              </div>
+                        </div>
+                  </section>
+
+                  <!-- ===== PROFIT & LOSS SUMMARY (SALARIED + MSME) ===== -->
+                  <section class="dashboard-pl" data-role="salaried">
+                        <div class="card">
+                              <div class="dashboard-pl__header">
+                                    <div>
+                                          <h4>Profit & Loss Summary</h4>
+                                          <p id="salaryPlDateRange" class="chart-subtitle"></p>
+                                    </div>
+
+                                    <div class="dashboard-pl__controls">
+                                          <select id="salaryPlRange" class="chart-dropdown">
+                                                <option value="current" selected>Current Month</option>
+                                                <option value="2m">Last 2 Months</option>
+                                                <option value="4m">Last 4 Months</option>
+                                                <option value="6m">Last 6 Months</option>
+                                                <option value="custom">Custom</option>
+                                          </select>
+
+                                          <div class="dashboard-pl__custom-range hidden" id="salaryPlCustomRange">
+                                                <input type="date" id="salaryPlCustomStart" class="chart-date-input" />
+                                                <input type="date" id="salaryPlCustomEnd" class="chart-date-input" />
+                                                <button type="button" id="salaryPlCustomApply" class="chart-date-apply">
+                                                      Apply
+                                                </button>
+                                          </div>
+                                    </div>
+                              </div>
+
+                              <div class="dashboard-pl__empty hidden" id="salaryPlEmptyState">
+                                    <h5 id="salaryPlEmptyTitle">No records found for this period</h5>
+                                    <p id="salaryPlEmptyBody">
+                                          Try a different time range or add income and expense entries in the selected
+                                          period.
+                                    </p>
+                              </div>
+
+                              <div class="pl-grid">
+                                    <div class="pl-item">
+                                          <span>Total Income</span>
+                                          <strong id="totalIncome">₹ 0</strong>
+                                    </div>
+                                    <div class="pl-item">
+                                          <span>Total Expenses</span>
+                                          <strong id="totalExpenses">₹ 0</strong>
+                                    </div>
+                                    <div class="pl-item highlight">
+                                          <span>Net Profit / Loss</span>
+                                          <strong id="netProfit">₹ 0</strong>
+                                    </div>
+                              </div>
+                        </div>
+                  </section>
+
+                  <!-- ===== DETAILED P&L (MSME ONLY – FIXED) ===== -->
+                  <section class="card pl-breakdown" data-role="msme">
+                        <div class="pl-breakdown__hero">
+                              <div>
+                                    <p class="pl-breakdown__eyebrow">MSME Operating Intelligence</p>
+                                    <h3>Detailed Profit & Loss Breakdown</h3>
+                                    <p class="pl-breakdown__copy">
+                                          See where revenue is coming from, where costs are building up, and which
+                                          levers deserve immediate action.
+                                    </p>
+                                    <div class="pl-breakdown__period">
+                                          <div class="pl-period-chip">
+                                                <span class="pl-period-chip__label">Reporting Window</span>
+                                                <strong id="plReportingWindow">Current available business history</strong>
+                                          </div>
+                                          <div class="pl-period-chip">
+                                                <span class="pl-period-chip__label">Date Range</span>
+                                                <strong id="plReportingRange">—</strong>
+                                          </div>
+                                    </div>
+                                    <div class="pl-breakdown__controls">
+                                          <div class="pl-filter-field">
+                                                <label for="plDatePreset">P&L Time Frame</label>
+                                                <select id="plDatePreset" class="chart-dropdown pl-date-select">
+                                                      <option value="15d">Last 15 Days</option>
+                                                      <option value="1m">Last 1 Month</option>
+                                                      <option value="3m" selected>Last 3 Months</option>
+                                                      <option value="6m">Last 6 Months</option>
+                                                      <option value="1y">Last 1 Year</option>
+                                                      <option value="custom">Custom Range</option>
+                                                </select>
+                                          </div>
+
+                                          <div class="pl-custom-range hidden" id="plCustomRange">
+                                                <div class="pl-filter-field">
+                                                      <label for="plCustomStart">From</label>
+                                                      <input type="date" id="plCustomStart" class="pl-date-input" />
+                                                </div>
+                                                <div class="pl-filter-field">
+                                                      <label for="plCustomEnd">To</label>
+                                                      <input type="date" id="plCustomEnd" class="pl-date-input" />
+                                                </div>
+                                                <button type="button" class="pl-date-apply" id="plCustomApply">Apply</button>
+                                          </div>
+                                    </div>
+                              </div>
+                              <div class="pl-breakdown__status" id="plStatusBadge">Monitoring live business mix</div>
+                        </div>
+
+                        <div class="pl-empty-state hidden" id="plEmptyState" aria-live="polite">
+                              <div class="pl-empty-state__badge">No activity detected</div>
+                              <div class="pl-empty-state__content">
+                                    <h4 id="plEmptyStateTitle">No business activity in this reporting window</h4>
+                                    <p id="plEmptyStateBody">
+                                          Try a wider reporting period or add recent income and expense records to unlock a
+                                          meaningful operating view.
+                                    </p>
+                              </div>
+                        </div>
+
+                        <div class="pl-breakdown__summary">
+                              <article class="pl-summary-card">
+                                    <span>Gross Inflow</span>
+                                    <strong id="plSummaryIncome">₹ 0</strong>
+                                    <p>Tracked revenue captured across all recorded sources.</p>
+                              </article>
+
+                              <article class="pl-summary-card">
+                                    <span>Total Outflow</span>
+                                    <strong id="plSummaryExpense">₹ 0</strong>
+                                    <p>Combined operating expense across business categories.</p>
+                              </article>
+
+                              <article class="pl-summary-card">
+                                    <span>Net Margin</span>
+                                    <strong id="plSummaryMargin">0%</strong>
+                                    <p>Profit retained after comparing total income and expenses.</p>
+                              </article>
+
+                              <article class="pl-summary-card">
+                                    <span>Primary Driver</span>
+                                    <strong id="plSummaryDriver">—</strong>
+                                    <p id="plSummaryDriverMeta">Waiting for enough data to identify the main lever.</p>
+                              </article>
+                        </div>
+
+                        <div class="pl-breakdown__context">
+                              <article class="pl-context-card pl-context-card--accent">
+                                    <span class="pl-context-card__label">Business signal</span>
+                                    <h4 id="plHeadline">Revenue and cost behavior will appear here.</h4>
+                                    <p id="plNarrative">
+                                          Add more business activity to surface a sharper operating story for this month.
+                                    </p>
+                              </article>
+
+                              <article class="pl-context-card">
+                                    <span class="pl-context-card__label">Action focus</span>
+                                    <ul class="pl-context-list">
+                                          <li id="plFocusIncome">Track which revenue source is contributing the strongest inflow.</li>
+                                          <li id="plFocusExpense">Watch which expense category is consuming the biggest share.</li>
+                                          <li id="plFocusBalance">Use net margin to decide whether to control costs or push growth.</li>
+                                    </ul>
+                              </article>
+                        </div>
+
+                        <div class="pl-breakdown__panels">
+                              <div class="pl-panel">
+                                    <div class="pl-panel__head">
+                                          <div>
+                                                <h4>Expense Breakdown</h4>
+                                                <p class="pl-panel__subtitle">Ranked cost centers with their business impact share.</p>
+                                          </div>
+                                          <div class="pl-panel__meta" id="expenseBreakdownMeta">0 categories</div>
+                                    </div>
+
+                                    <div class="pl-table-shell">
+                                          <table class="pl-table">
+                                                <thead>
+                                                      <tr>
+                                                            <th>Rank</th>
+                                                            <th>Category</th>
+                                                            <th>Amount (₹)</th>
+                                                            <th>Share</th>
+                                                            <th>Signal</th>
+                                                      </tr>
+                                                </thead>
+                                                <tbody id="expenseBreakdownBody"></tbody>
+                                          </table>
+                                    </div>
+                                    <p class="pl-table-scroll-hint" aria-hidden="true">← Swipe table to view all columns →</p>
+
+                                    <p class="pl-panel__note" id="expenseBreakdownNote">
+                                          Your highest cost categories will be highlighted here.
+                                    </p>
+                              </div>
+
+                              <div class="pl-panel">
+                                    <div class="pl-panel__head">
+                                          <div>
+                                                <h4>Income Breakdown</h4>
+                                                <p class="pl-panel__subtitle">Most valuable revenue sources ranked by contribution.</p>
+                                          </div>
+                                          <div class="pl-panel__meta" id="incomeBreakdownMeta">0 sources</div>
+                                    </div>
+
+                                    <div class="pl-table-shell">
+                                          <table class="pl-table">
+                                                <thead>
+                                                      <tr>
+                                                            <th>Rank</th>
+                                                            <th>Source</th>
+                                                            <th>Amount (₹)</th>
+                                                            <th>Share</th>
+                                                            <th>Signal</th>
+                                                      </tr>
+                                                </thead>
+                                                <tbody id="incomeBreakdownBody"></tbody>
+                                          </table>
+                                    </div>
+                                    <p class="pl-table-scroll-hint" aria-hidden="true">← Swipe table to view all columns →</p>
+
+                                    <p class="pl-panel__note" id="incomeBreakdownNote">
+                                          Your strongest revenue channels will be highlighted here.
+                                    </p>
+                              </div>
+                        </div>
+
+                        <div class="pl-charts">
+                              <div class="chart-card">
+                                    <div class="chart-header">
+                                          <div>
+                                                <h4>Profitability Trend</h4>
+                                                <p id="profitTrendDateRange" class="chart-subtitle"></p>
+                                          </div>
+
+                                          <div class="chart-filter-stack">
+                                                <select id="profitTrendRange" class="chart-dropdown">
+                                                      <option value="15d">Last 15 Days</option>
+                                                      <option value="1m">Last 1 Month</option>
+                                                      <option value="3m" selected>Last 3 Months</option>
+                                                      <option value="6m">Last 6 Months</option>
+                                                      <option value="1y">Last 1 Year</option>
+                                                      <option value="custom">Custom Range</option>
+                                                </select>
+
+                                                <div class="chart-custom-range hidden" id="profitTrendCustomRange">
+                                                      <input type="date" id="profitTrendCustomStart" class="chart-date-input" />
+                                                      <input type="date" id="profitTrendCustomEnd" class="chart-date-input" />
+                                                      <button type="button" id="profitTrendCustomApply" class="chart-date-apply">Apply</button>
+                                                </div>
+                                          </div>
+                                    </div>
+                                    <div class="chart-wrap">
+                                          <canvas id="profitTrendChart"></canvas>
+                                    </div>
+                              </div>
+
+                              <div class="chart-card">
+                                    <div class="chart-header">
+                                          <div>
+                                                <h4>Income Sources</h4>
+                                                <p id="incomeSourcesDateRange" class="chart-subtitle"></p>
+                                          </div>
+
+                                          <div class="chart-filter-stack">
+                                                <select id="incomeSourcesRange" class="chart-dropdown">
+                                                      <option value="15d">Last 15 Days</option>
+                                                      <option value="1m">Last 1 Month</option>
+                                                      <option value="3m" selected>Last 3 Months</option>
+                                                      <option value="6m">Last 6 Months</option>
+                                                      <option value="1y">Last 1 Year</option>
+                                                      <option value="custom">Custom Range</option>
+                                                </select>
+
+                                                <div class="chart-custom-range hidden" id="incomeSourcesCustomRange">
+                                                      <input type="date" id="incomeSourcesCustomStart" class="chart-date-input" />
+                                                      <input type="date" id="incomeSourcesCustomEnd" class="chart-date-input" />
+                                                      <button type="button" id="incomeSourcesCustomApply" class="chart-date-apply">Apply</button>
+                                                </div>
+                                          </div>
+                                    </div>
+                                    <div class="chart-wrap">
+                                          <canvas id="incomeSourcesChart"></canvas>
+                                    </div>
+                              </div>
+                        </div>
+                  </section>
+
+                  <!-- ===== INSIGHTS ===== -->
+                  <section class="insights-section" data-role="student salaried msme">
+                        <div class="insights-header">
+                              <div>
+                                    <h3>Smart Insights</h3>
+                                    <p>AI-powered analysis of your spending patterns</p>
+                              </div>
+
+                              <div class="insights-score-wrap">
+                                    <span class="insights-score-label">INSIGHT SCORE</span>
+                                    <span id="insightScore" class="insights-score">0 / 10</span>
+                              </div>
+                        </div>
+
+                        <div id="insightsList" class="insights-grid"></div>
+                  </section>
+            </main>
+
+            <div class="budget-rules-overlay hidden" id="budgetRulesOverlay">
+                  <div class="budget-rules-modal" role="dialog" aria-modal="true" aria-labelledby="budgetRulesTitle">
+                        <div class="budget-rules-head">
+                              <div>
+                                    <p class="budget-rules-kicker">Budget Rules</p>
+                                    <h3 id="budgetRulesTitle">Review budget logic before saving</h3>
+                              </div>
+                              <button type="button" class="budget-rules-close" id="budgetRulesClose" aria-label="Close budget rules">
+                                    ×
+                              </button>
+                        </div>
+
+                        <p class="budget-rules-copy" id="budgetRulesCopy">
+                              Please review how the student budget system works before you continue.
+                        </p>
+
+                        <div class="budget-rules-summary">
+                              <div class="budget-rules-summary-item">
+                                    <span>Action</span>
+                                    <strong id="budgetRulesAction">Set Budget</strong>
+                              </div>
+                              <div class="budget-rules-summary-item">
+                                    <span>New Budget</span>
+                                    <strong id="budgetRulesAmount">₹ 0</strong>
+                              </div>
+                        </div>
+
+                        <ul class="budget-rules-list">
+                              <li>Your monthly budget becomes the base limit used to compare total student spending.</li>
+                              <li>You can update the budget a maximum of 3 times.</li>
+                              <li>Once spending goes above 50% of the initial budget and at least one edit is used, budget editing gets locked.</li>
+                              <li>The dashboard recalculates spent amount, remaining balance, progress, and insights after each save.</li>
+                        </ul>
+
+                        <div class="budget-rules-actions">
+                              <button type="button" class="budget-rules-btn budget-rules-btn--ghost" id="budgetRulesCancel">
+                                    Cancel
+                              </button>
+                              <button type="button" class="budget-rules-btn budget-rules-btn--primary" id="budgetRulesConfirm">
+                                    I Understand, Save Budget
+                              </button>
+                        </div>
+                  </div>
+            </div>
+
+            <!-- ================= SCRIPTS ================= -->
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <script src="JS/theme-toggle.js"></script>
+            <script src="JS/auth.js"></script>
+            <script src="JS/dashboard.js"></script>
+      </body>
+</html>

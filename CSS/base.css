@@ -1,0 +1,179 @@
+/* ================================
+      BASE RESET
+================================ */
+
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+}
+
+/* ================================ ROOT VARIABLES ================================ */
+:root {
+      /* Backgrounds */
+      --bg-color: #0e0f12;
+      --card-bg: rgba(255, 255, 255, 0.06);
+      /* --glass-bg: rgba(255, 255, 255, 0.08); */
+      --glass-bg: rgba(255, 255, 255, 0.04);
+
+      /* Borders */
+      --border-color: rgba(255, 255, 255, 0.14);
+
+      /* Text */
+      --text-primary: #e5e7eb;
+      --text-secondary: #9ca3af;
+
+      /* Accent */
+      --accent-color: #3b82f6;
+
+      /* Status */
+      --danger-color: #ef4444;
+      --success-color: #22c55e;
+
+      /* Radius */
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+
+      /* Effects */
+      --blur-strength: blur(16px);
+      --transition-fast: 0.25s ease;
+
+      /* Scrollbar */
+      --scrollbar-size: 12px;
+      --scrollbar-track: rgba(255, 255, 255, 0.05);
+      --scrollbar-thumb: linear-gradient(180deg, #60a5fa 0%, #2563eb 100%);
+      --scrollbar-thumb-hover: linear-gradient(180deg, #93c5fd 0%, #3b82f6 100%);
+      --scrollbar-border: rgba(14, 15, 18, 0.78);
+}
+
+/* ================================
+      ROOT DEFAULTS
+================================ */
+
+html,
+body {
+      height: 100%;
+}
+
+html {
+      scrollbar-width: thin;
+      scrollbar-color: #3b82f6 var(--scrollbar-track);
+}
+
+body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-primary);
+      transition:
+            background-color 0.3s ease,
+            color 0.3s ease;
+}
+
+body::-webkit-scrollbar {
+      width: var(--scrollbar-size);
+      height: var(--scrollbar-size);
+}
+
+body::-webkit-scrollbar-track {
+      background: var(--scrollbar-track);
+}
+
+body::-webkit-scrollbar-thumb {
+      background: var(--scrollbar-thumb);
+      border-radius: 999px;
+      border: 2px solid var(--scrollbar-border);
+      background-clip: padding-box;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+      background: var(--scrollbar-thumb-hover);
+      border-radius: 999px;
+      border: 2px solid var(--scrollbar-border);
+      background-clip: padding-box;
+}
+
+body::-webkit-scrollbar-corner {
+      background: var(--scrollbar-track);
+}
+
+/* ================================
+      TYPOGRAPHY
+================================ */
+
+h1,
+h2,
+h3,
+h4 {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-primary);
+}
+
+p,
+span,
+label {
+      font-size: 14px;
+      color: var(--text-secondary);
+}
+
+a {
+      text-decoration: none;
+      color: var(--accent-color);
+}
+
+/* ================================
+      GLOBAL UTILITIES
+================================ */
+
+.container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px;
+}
+
+.pl-profit {
+      color: #22c55e; /* green */
+}
+
+.pl-loss {
+      color: #ef4444; /* red */
+}
+
+/* ================================
+      GLASSMORPHISM SYSTEM
+================================ */
+
+.glass {
+      background: var(--glass-bg);
+      backdrop-filter: var(--blur-strength);
+      -webkit-backdrop-filter: var(--blur-strength);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+}
+
+/* ================================
+      LIGHT THEME OVERRIDE
+================================ */
+
+[data-theme='light'] {
+      --bg-color: #f5f7fb;
+      --card-bg: rgba(0, 0, 0, 0.04);
+      --glass-bg: rgba(255, 255, 255, 0.7);
+
+      --border-color: rgba(0, 0, 0, 0.1);
+
+      --text-primary: #111827;
+      --text-secondary: #6b7280;
+
+      --accent-color: #2563eb;
+
+      --danger-color: #dc2626;
+      --success-color: #16a34a;
+
+      --scrollbar-track: rgba(148, 163, 184, 0.18);
+      --scrollbar-thumb: linear-gradient(180deg, #93c5fd 0%, #2563eb 100%);
+      --scrollbar-thumb-hover: linear-gradient(180deg, #bfdbfe 0%, #3b82f6 100%);
+      --scrollbar-border: rgba(255, 255, 255, 0.88);
+}
+
+

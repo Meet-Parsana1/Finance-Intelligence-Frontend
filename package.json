@@ -1,0 +1,8 @@
+{
+      "name": "finance-intelligence-frontend",
+      "private": true,
+      "version": "1.0.0",
+      "scripts": {
+            "dev": "npx serve . -l 5500"
+      }
+}

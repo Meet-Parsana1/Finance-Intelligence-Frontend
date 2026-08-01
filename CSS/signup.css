@@ -1,0 +1,398 @@
+/* ============================================================
+      signup.css — Finance Intelligence
+      Signup Page Supplemental Styles (Light Theme)
+      Extends: login.css
+   ============================================================ */
+
+/* ════════════════════════════════════════════════════════════
+      SIGNUP RIGHT PANEL — Scrollable
+════════════════════════════════════════════════════════════ */
+html,
+body.signup-page {
+      height: 100%;
+      overflow: hidden;
+}
+
+body.signup-page .shell {
+      min-height: 100vh;
+      height: 100vh;
+      overflow: hidden;
+}
+
+.signup-right {
+      align-items: flex-start;
+      padding-top: 44px;
+      padding-bottom: 44px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+
+      /* Smooth momentum scrolling on iOS */
+      -webkit-overflow-scrolling: touch;
+}
+
+/* Elegant branded scrollbar (overrides any default) */
+.signup-right::-webkit-scrollbar {
+      width: 4px;
+}
+.signup-right::-webkit-scrollbar-track {
+      background: #f1f5f9;
+      border-radius: 99px;
+      margin: 16px 0;
+}
+.signup-right::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #93c5fd 0%, #2563eb 100%);
+      border-radius: 99px;
+      min-height: 40px;
+}
+.signup-right::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(180deg, #60a5fa 0%, #1d4ed8 100%);
+}
+
+/* On tall viewports, centre the card */
+@media (min-height: 860px) {
+      .signup-right {
+            align-items: center;
+      }
+}
+
+.signup-box {
+      max-width: 380px;
+}
+
+/* Mobile-only brand: the desktop brand remains in the left panel. */
+.signup-mobile-brand {
+      display: none;
+}
+
+/* ════════════════════════════════════════════════════════════
+   FIELD VALIDATION STATES
+════════════════════════════════════════════════════════════ */
+.form-group.is-valid input,
+.form-group.is-valid select {
+      border-color: rgba(16, 185, 129, 0.5) !important;
+      background: #f0fdf9 !important;
+}
+
+.form-group.is-valid input:focus,
+.form-group.is-valid select:focus {
+      border-color: rgba(16, 185, 129, 0.7) !important;
+      box-shadow:
+            0 0 0 4px rgba(16, 185, 129, 0.1),
+            0 2px 8px rgba(16, 185, 129, 0.08) !important;
+      background: #ffffff !important;
+}
+
+.form-group.is-error input,
+.form-group.is-error select {
+      border-color: rgba(239, 68, 68, 0.45) !important;
+      background: #fff8f8 !important;
+}
+
+.form-group.is-error input:focus,
+.form-group.is-error select:focus {
+      border-color: rgba(239, 68, 68, 0.65) !important;
+      box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.09) !important;
+      background: #ffffff !important;
+}
+
+/* ── Inline feedback ─────────────────────────────────────── */
+.field-msg {
+      font-size: 11px;
+      margin-top: 5px;
+      min-height: 16px;
+      line-height: 1.45;
+      transition:
+            color 0.22s,
+            opacity 0.22s;
+      color: var(--muted);
+}
+
+.form-group.is-valid .field-msg {
+      color: var(--green);
+}
+.form-group.is-error .field-msg {
+      color: var(--red);
+}
+.form-group.is-neutral .field-msg {
+      color: var(--muted);
+}
+
+/* ── Validation icon ─────────────────────────────────────── */
+.field-icon {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 13px;
+      line-height: 1;
+      pointer-events: none;
+}
+
+.input-wrap:has(.toggle-pwd) .field-icon {
+      right: 42px;
+}
+
+/* ════════════════════════════════════════════════════════════
+   PASSWORD STRENGTH METER
+════════════════════════════════════════════════════════════ */
+.strength-meter {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+      min-height: 18px;
+      opacity: 0;
+      transition: opacity 0.3s;
+}
+
+.strength-meter.visible {
+      opacity: 1;
+}
+
+.strength-track {
+      flex: 1;
+      height: 4px;
+      background: var(--border);
+      border-radius: 99px;
+      overflow: hidden;
+}
+
+.strength-bar {
+      height: 100%;
+      width: 0%;
+      border-radius: 99px;
+      transition:
+            width 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+            background 0.45s;
+}
+
+.strength-bar[data-strength='weak'] {
+      width: 33%;
+      background: var(--red);
+}
+.strength-bar[data-strength='medium'] {
+      width: 66%;
+      background: var(--amber);
+}
+.strength-bar[data-strength='strong'] {
+      width: 100%;
+      background: var(--green);
+}
+
+.strength-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      min-width: 44px;
+      text-align: right;
+      transition: color 0.3s;
+}
+
+.strength-label[data-strength='weak'] {
+      color: var(--red);
+}
+.strength-label[data-strength='medium'] {
+      color: var(--amber);
+}
+.strength-label[data-strength='strong'] {
+      color: var(--green);
+}
+
+/* ════════════════════════════════════════════════════════════
+   CUSTOM SELECT
+════════════════════════════════════════════════════════════ */
+.select-wrap {
+      position: relative;
+}
+
+.select-wrap select {
+      width: 100%;
+      background: var(--card);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 13px 44px 13px 16px;
+      color: var(--text);
+      font-family: var(--font-sans);
+      font-size: 14.5px;
+      outline: none;
+      appearance: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+      transition:
+            border-color 0.25s var(--smooth),
+            box-shadow 0.25s var(--smooth),
+            background 0.25s,
+            transform 0.2s var(--spring);
+}
+
+.select-wrap select option[value=''] {
+      color: #94a3b8;
+}
+
+.select-wrap select:hover:not(:focus) {
+      border-color: #c8d5e8;
+      background: #fafbfd;
+}
+
+.select-wrap select:focus {
+      border-color: var(--accent);
+      background: #ffffff;
+      box-shadow:
+            0 0 0 4px var(--accent-glow),
+            0 2px 8px rgba(37, 99, 235, 0.08);
+      transform: translateY(-1px);
+}
+
+.select-chevron {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      color: var(--subtle);
+      pointer-events: none;
+      transition:
+            color 0.22s,
+            transform 0.25s var(--smooth);
+}
+
+.select-wrap:focus-within .select-chevron {
+      color: var(--accent);
+      transform: translateY(-50%) rotate(180deg);
+}
+
+/* ════════════════════════════════════════════════════════════
+   SIGNUP BUTTON
+════════════════════════════════════════════════════════════ */
+.btn-signup:disabled {
+      background: linear-gradient(135deg, #bfdbfe 0%, #93c5fd 100%);
+      color: rgba(255, 255, 255, 0.7);
+      cursor: not-allowed;
+      box-shadow: none;
+      transform: none;
+}
+
+.btn-signup:disabled::after {
+      display: none;
+}
+
+.btn-signup:not(:disabled):hover {
+      background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+}
+
+/* ════════════════════════════════════════════════════════════
+   STAGGERED ENTRY ANIMATIONS (signup extras)
+════════════════════════════════════════════════════════════ */
+.auth-heading {
+      animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+      animation-delay: 0.08s;
+}
+
+.auth-sub {
+      animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+      animation-delay: 0.14s;
+}
+
+.form-group:nth-child(3) {
+      animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+      animation-delay: 0.32s;
+}
+.form-group:nth-child(4) {
+      animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+      animation-delay: 0.38s;
+}
+.form-group:nth-child(5) {
+      animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+      animation-delay: 0.44s;
+}
+.form-group:nth-child(6) {
+      animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+      animation-delay: 0.5s;
+}
+
+/* ════════════════════════════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+      html,
+      body.signup-page {
+            overflow-y: auto;
+      }
+
+      body.signup-page .shell {
+            min-height: 100vh;
+            height: auto;
+            overflow: visible;
+      }
+
+      .signup-right {
+            order: 1;
+            padding: 40px 28px;
+            align-items: center;
+            overflow-y: visible;
+      }
+}
+
+/* Tablet and mobile: keep branding with the form, not in a separate panel. */
+@media (max-width: 1024px) {
+      body.signup-page .shell {
+            display: block;
+      }
+
+      body.signup-page .left {
+            display: none !important;
+      }
+
+      body.signup-page .signup-right {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            min-height: 100vh;
+            padding: 24px 20px 32px;
+      }
+
+      body.signup-page .signup-mobile-brand {
+            display: flex;
+            align-items: center;
+            align-self: stretch;
+            gap: 14px;
+            margin: 0 auto 30px;
+            width: min(100%, 520px);
+            color: var(--text);
+            font-family: var(--font-serif);
+            font-size: clamp(38px, 4vw, 46px);
+            font-weight: 700;
+            letter-spacing: -0.06em;
+            line-height: 1.08;
+            position: relative;
+            z-index: 1;
+      }
+
+      .signup-mobile-brand__icon {
+            display: grid;
+            width: clamp(46px, 5vw, 56px);
+            height: clamp(46px, 5vw, 56px);
+            place-items: center;
+            flex: 0 0 clamp(46px, 5vw, 56px);
+      }
+
+      .signup-mobile-brand__icon svg {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 4px 8px rgba(37, 99, 235, 0.25));
+      }
+
+      body.signup-page .signup-box {
+            max-width: 520px;
+      }
+
+      body.signup-page .auth-heading {
+            font-size: clamp(30px, 3vw, 36px);
+      }
+}

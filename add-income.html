@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+      <head>
+            <meta charset="UTF-8" />
+            <title>Add Income | Finance Intelligence</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+            <!-- CSS -->
+
+            <link rel="stylesheet" href="CSS/base.css" />
+            <link rel="stylesheet" href="CSS/theme.css" />
+            <link rel="stylesheet" href="CSS/components.css" />
+            <link rel="stylesheet" href="CSS/layout.css" />
+            <link rel="stylesheet" href="CSS/dashboard.css" />
+            <link rel="stylesheet" href="CSS/add-expense.css" />
+            <link rel="stylesheet" href="CSS/add-income.css" />
+      </head>
+
+      <body class="add-income-page">
+            <!-- ================= GLASS NAVBAR ================= -->
+
+            <nav class="glass-navbar">
+                  <ul class="glass-nav-items">
+                        <li class="nav-item" onclick="window.location.href = 'dashboard.html'">Dashboard</li>
+
+                        <li class="nav-item" onclick="window.location.href = 'expenses.html'">Expenses</li>
+
+                        <li class="nav-item active">Income</li>
+
+                        <!-- <li class="nav-item" onclick="window.location.href = 'reports.html'">Reports</li> -->
+                  </ul>
+            </nav>
+
+            <!-- ================= HEADER ================= -->
+
+            <header class="navbar">
+                  <div class="navbar-left">
+                        <span class="navbar-title">Finance Intelligence</span>
+                  </div>
+
+                  <div class="navbar-right">
+                        <button id="theme-toggle" class="theme-btn">
+                              <span class="theme-icon">🌙</span>
+                        </button>
+                  </div>
+            </header>
+
+            <!-- ================= MAIN ================= -->
+
+            <main class="income-page-shell">
+                  <section class="income-hero-panel card">
+                        <div class="income-hero-badge">Income Studio</div>
+                        <h1>Capture earnings with confidence and precision.</h1>
+                        <p class="income-hero-text">
+                              Record every income stream in a premium workspace built for visibility, speed, and trust
+                              across light mode, dark mode, and every screen size.
+                        </p>
+
+                        <div class="income-hero-grid">
+                              <article class="income-hero-stat">
+                                    <span class="income-hero-stat-label">Clarity</span>
+                                    <strong>Source-first tracking</strong>
+                                    <p>Keep source, category, payment mode, and date aligned in one structured flow.</p>
+                              </article>
+
+                              <article class="income-hero-stat">
+                                    <span class="income-hero-stat-label">Control</span>
+                                    <strong>Readable everywhere</strong>
+                                    <p>The layout stays clean and easy to scan in both dark and light mode.</p>
+                              </article>
+
+                              <article class="income-hero-stat">
+                                    <span class="income-hero-stat-label">Speed</span>
+                                    <strong>Low-friction entry</strong>
+                                    <p>Important fields stay prominent so saving a new income record feels effortless.</p>
+                              </article>
+                        </div>
+                  </section>
+
+                  <section class="card income-card-form">
+                        <div class="income-form-head">
+                              <div>
+                                    <p class="income-form-kicker">New Entry</p>
+                                    <h2>Add Income</h2>
+                              </div>
+                              <div class="income-form-head-actions">
+                                    <p class="income-form-note">Complete the form below to save a new income record.</p>
+                                    <a href="incomes.html" class="income-back-btn">← Back to Incomes</a>
+                              </div>
+                        </div>
+
+                        <form id="addIncomeForm" class="income-form">
+                              <div class="income-form-grid">
+                                    <div class="form-group">
+                                          <label for="incomeSource">Income Source</label>
+                                          <input
+                                                type="text"
+                                                id="incomeSource"
+                                                placeholder="Describe the income source"
+                                                required
+                                          />
+                                    </div>
+
+                                    <div class="form-group">
+                                          <label for="incomeAmount">Amount</label>
+
+                                          <input type="number" id="incomeAmount" placeholder="Enter amount" required />
+                                    </div>
+
+                                    <div class="form-group">
+                                          <label for="incomeCategory">Category</label>
+
+                                          <select id="incomeCategory" required></select>
+                                    </div>
+
+                                    <div class="form-group">
+                                          <label for="incomeMode">Payment Mode</label>
+
+                                          <select id="incomeMode">
+                                                <option value="Bank">Bank</option>
+                                                <option value="UPI">UPI</option>
+                                                <option value="Cash">Cash</option>
+                                          </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                          <label for="incomeDate">Date</label>
+
+                                          <input type="date" id="incomeDate" required />
+                                    </div>
+                              </div>
+
+                              <button type="submit" class="primary-btn income-submit-btn">Save Income</button>
+                        </form>
+                  </section>
+            </main>
+
+            <!-- ================= JS ================= -->
+
+            <script src="JS/income-categories.js"></script>
+            <script src="JS/add-income.js"></script>
+            <script src="JS/theme-toggle.js"></script>
+
+            <script src="https://unpkg.com/lucide@latest"></script>
+
+            <script>
+                  lucide.createIcons();
+            </script>
+      </body>
+</html>

@@ -1,0 +1,506 @@
+/* ===============================
+      AUTH UI – PREMIUM FINTECH (No ID/Class changed)
+================================ */   
+
+/* Page background */
+body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #f6f8fb, #eef2ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+}
+
+/* Shared form styling */
+form {
+      background: #ffffff;
+      width: 380px;
+      padding: 32px 28px;
+      border-radius: 16px;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+      animation: fadeUp 0.6s ease;
+}
+
+/* Heading */
+form h2 {
+      font-size: 26px;
+      font-weight: 600;
+      margin-bottom: 22px;
+      color: #111827;
+      text-align: center;
+}
+
+/* Inputs & select */
+form input,
+form select {
+      width: 100%;
+      padding: 14px 14px;
+      margin-bottom: 14px;
+      font-size: 14px;
+      border-radius: 10px;
+      border: 1px solid #d1d5db;
+      outline: none;
+      transition: all 0.25s ease;
+      background: #fff;
+}
+
+/* Focus state */
+form input:focus,
+form select:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Label (Signup user type) */
+form label {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 6px;
+      color: #374151;
+}
+
+/* Buttons */
+form button {
+      width: 100%;
+      margin-top: 10px;
+      padding: 14px;
+      font-size: 15px;
+      font-weight: 500;
+      color: #ffffff;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      background: linear-gradient(135deg, #2563eb, #1e40af);
+      transition: all 0.3s ease;
+}
+
+/* Button hover */
+form button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 25px rgba(37, 99, 235, 0.35);
+}
+
+/* Button active */
+form button:active {
+      transform: translateY(0);
+      box-shadow: 0 6px 14px rgba(37, 99, 235, 0.3);
+}
+
+/* Message text (login/signup message) */
+#loginMessage,
+#signupMessage {
+      margin-top: 10px;
+      font-size: 13px;
+      text-align: center;
+}
+
+/* Bottom switch text */
+form p {
+      margin-top: 18px;
+      font-size: 13px;
+      text-align: center;
+      color: #374151;
+}
+
+/* Links */
+form a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 500;
+}
+
+form a:hover {
+      text-decoration: underline;
+}
+
+/* Animation */
+@keyframes fadeUp {
+      from {
+            opacity: 0;
+            transform: translateY(25px);
+      }
+      to {
+            opacity: 1;
+            transform: translateY(0);
+      }
+}
+
+/* Mobile responsive */
+@media (max-width: 480px) {
+      form {
+            width: 90%;
+            padding: 26px 22px;
+      }
+}
+
+/* ===============================
+      ERROR STATES – AUTH FORMS
+================================ */
+
+/* Error input */
+.input-error {
+      border-color: #ef4444 !important;
+      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+}
+
+/* Error message text */
+.error-text {
+      color: #ef4444;
+      font-size: 13px;
+      margin-top: 8px;
+}
+
+/* Success message */
+.success-text {
+      color: #16a34a;
+      font-size: 13px;
+      margin-top: 8px;
+}
+
+/* Shake animation */
+@keyframes shake {
+      0% {
+            transform: translateX(0);
+      }
+      20% {
+            transform: translateX(-6px);
+      }
+      40% {
+            transform: translateX(6px);
+      }
+      60% {
+            transform: translateX(-4px);
+      }
+      80% {
+            transform: translateX(4px);
+      }
+      100% {
+            transform: translateX(0);
+      }
+}
+
+.form-error {
+      animation: shake 0.4s ease;
+}
+
+/* ===============================
+      LOADING STATES – AUTH BUTTON
+================================ */
+
+button.loading {
+      pointer-events: none;
+      opacity: 0.85;
+      position: relative;
+}
+
+button.loading::after {
+      content: '';
+      width: 18px;
+      height: 18px;
+      border: 2px solid rgba(255, 255, 255, 0.6);
+      border-top-color: #ffffff;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+      to {
+            transform: rotate(360deg) translate(-50%, -50%);
+      }
+}
+
+/* ===============================
+      LIVE VALIDATION STATES
+================================ */
+
+.input-valid {
+      border-color: #22c55e !important;
+      box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.15);
+}
+
+.validation-text {
+      font-size: 12px;
+      margin-top: 4px;
+}
+
+.validation-text.error {
+      color: #ef4444;
+}
+
+.validation-text.success {
+      color: #22c55e;
+}
+
+/* ===============================
+      GLASSMORPHISM – STRONG MODE
+================================ */
+
+/* Background upgrade */
+body {
+      background: radial-gradient(circle at top left, #1e3a8a, #020617 60%);
+}
+
+/* Glass auth card */
+form {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow:
+            0 25px 50px rgba(0, 0, 0, 0.5),
+            inset 0 0 0.5px rgba(255, 255, 255, 0.4);
+}
+
+/* Headings */
+form h2 {
+      color: #ffffff;
+}
+
+/* Paragraph text */
+form p {
+      color: rgba(255, 255, 255, 0.85);
+}
+
+/* Links */
+form a {
+      color: #60a5fa;
+}
+
+/* Glass inputs */
+form input,
+form select {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: #ffffff;
+}
+
+/* Placeholder color */
+form input::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+}
+
+/* Input focus glow */
+form input:focus,
+form select:focus {
+      border-color: #60a5fa;
+      box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.35);
+}
+
+/* Validation colors stay readable */
+.input-error {
+      border-color: #f87171 !important;
+}
+
+.input-valid {
+      border-color: #4ade80 !important;
+}
+
+/* Button glow upgrade */
+form button {
+      background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+      box-shadow: 0 12px 30px rgba(59, 130, 246, 0.45);
+}
+
+form button:hover {
+      box-shadow: 0 16px 40px rgba(59, 130, 246, 0.6);
+}
+
+/* ===============================
+      NEON ACCENTS – FUTURISTIC MODE
+================================ */
+
+/* Neon variables (easy to tweak) */
+:root {
+      --neon-blue: #38bdf8;
+      --neon-purple: #6366f1;
+      --neon-green: #22c55e;
+      --neon-red: #ef4444;
+}
+
+/* Neon glass edge */
+form {
+      position: relative;
+}
+
+form::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      background: linear-gradient(
+            120deg,
+            transparent 30%,
+            rgba(56, 189, 248, 0.35),
+            rgba(99, 102, 241, 0.35),
+            transparent 70%
+      );
+      filter: blur(8px);
+      opacity: 0.8;
+      z-index: -1;
+}
+
+/* Input neon focus */
+form input:focus,
+form select:focus {
+      box-shadow:
+            0 0 0 2px rgba(56, 189, 248, 0.4),
+            0 0 18px rgba(56, 189, 248, 0.35);
+}
+
+/* Valid input neon */
+.input-valid {
+      box-shadow:
+            0 0 0 2px rgba(34, 197, 94, 0.35),
+            0 0 14px rgba(34, 197, 94, 0.4);
+}
+
+/* Error input neon */
+.input-error {
+      box-shadow:
+            0 0 0 2px rgba(239, 68, 68, 0.4),
+            0 0 14px rgba(239, 68, 68, 0.45);
+}
+
+/* Button neon aura */
+form button {
+      position: relative;
+      overflow: hidden;
+}
+
+form button::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent, rgba(56, 189, 248, 0.4), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+}
+
+form button:hover::after {
+      opacity: 1;
+}
+
+/* Button glow on hover */
+form button:hover {
+      box-shadow:
+            0 0 20px rgba(56, 189, 248, 0.55),
+            0 0 40px rgba(56, 189, 248, 0.35);
+}
+
+/* Success text glow */
+.success-text {
+      text-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
+}
+
+/* Error text glow */
+.error-text {
+      text-shadow: 0 0 8px rgba(239, 68, 68, 0.6);
+}
+
+/* ===============================
+      ROLE-BASED NEON THEMES
+================================ */
+
+/* Default (fallback) */
+:root {
+      --role-neon: #38bdf8;
+}
+
+/* Student Theme */
+.theme-student {
+      --role-neon: #22d3ee; /* cyan */
+}
+
+/* Salaried Theme */
+.theme-salaried {
+      --role-neon: #22c55e; /* green */
+}
+
+/* MSME Theme */
+.theme-msme {
+      --role-neon: #a855f7; /* purple */
+}
+
+form input:focus,
+form select:focus {
+      box-shadow:
+            0 0 0 2px color-mix(in srgb, var(--role-neon), transparent 40%),
+            0 0 18px color-mix(in srgb, var(--role-neon), transparent 35%);
+}
+
+form button:hover {
+      box-shadow:
+            0 0 20px color-mix(in srgb, var(--role-neon), transparent 30%),
+            0 0 40px color-mix(in srgb, var(--role-neon), transparent 55%);
+}
+
+.success-text {
+      color: var(--role-neon);
+      text-shadow: 0 0 10px var(--role-neon);
+}
+
+/* ===============================
+      ROLE-BASED NEON (FIXED)
+================================ */
+
+/* Default neon */
+:root {
+      --role-neon: #38bdf8;
+      --role-neon-soft: rgba(56, 189, 248, 0.35);
+}
+
+/* Student */
+.theme-student {
+      --role-neon: #22d3ee;
+      --role-neon-soft: rgba(34, 211, 238, 0.35);
+}
+
+/* Salaried */
+.theme-salaried {
+      --role-neon: #22c55e;
+      --role-neon-soft: rgba(34, 197, 94, 0.35);
+}
+
+/* MSME */
+.theme-msme {
+      --role-neon: #a855f7;
+      --role-neon-soft: rgba(168, 85, 247, 0.35);
+}
+
+/* Glass edge glow */
+form::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      background: linear-gradient(120deg, transparent 30%, var(--role-neon-soft), transparent 70%);
+      filter: blur(10px);
+      opacity: 0.9;
+      z-index: -1;
+}
+
+/* Input focus neon */
+form input:focus,
+form select:focus {
+      box-shadow:
+            0 0 0 2px var(--role-neon-soft),
+            0 0 18px var(--role-neon-soft);
+}
+
+/* Button hover neon */
+form button:hover {
+      box-shadow:
+            0 0 20px var(--role-neon-soft),
+            0 0 40px var(--role-neon-soft);
+}
+
+/* Success text */
+.success-text {
+      color: var(--role-neon);
+      text-shadow: 0 0 10px var(--role-neon);
+}

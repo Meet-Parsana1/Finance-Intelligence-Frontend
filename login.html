@@ -1,0 +1,694 @@
+<!doctype html>
+<html lang="en">
+      <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>Finance Intelligence — Login</title>
+
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+            <link
+                  href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500;600&display=swap"
+                  rel="stylesheet"
+            />
+
+            <link rel="stylesheet" href="CSS/login.css" />
+            <link rel="stylesheet" href="CSS/signup.css" />
+            <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+      </head>
+      <body class="login-page">
+            <div class="shell">
+                  <!-- ═══════════════════════════════════════════════
+                        LEFT PANEL — Command Center (60%)
+                  ════════════════════════════════════════════════ -->
+                  <section class="left">
+                        <div class="orb orb-1"></div>
+                        <div class="orb orb-2"></div>
+                        <div class="orb orb-3"></div>
+
+                        <!-- Brand Header -->
+                        <div class="brand-header">
+                              <div class="brand-wordmark">
+                                    <div class="brand-icon">
+                                          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <defs>
+                                                      <linearGradient
+                                                            id="hexGrad"
+                                                            x1="0"
+                                                            y1="0"
+                                                            x2="48"
+                                                            y2="48"
+                                                            gradientUnits="userSpaceOnUse"
+                                                      >
+                                                            <stop offset="0%" stop-color="#3b82f6" />
+                                                            <stop offset="100%" stop-color="#1d4ed8" />
+                                                      </linearGradient>
+                                                </defs>
+                                                <path d="M24 2L42 12V36L24 46L6 36V12L24 2Z" fill="url(#hexGrad)" />
+                                                <path
+                                                      d="M15 32 L19 24 L23 28 L27 19 L33 23"
+                                                      stroke="white"
+                                                      stroke-width="2.2"
+                                                      stroke-linecap="round"
+                                                      stroke-linejoin="round"
+                                                      fill="none"
+                                                />
+                                                <circle cx="33" cy="23" r="2.5" fill="white" />
+                                          </svg>
+                                    </div>
+                                    <div class="brand-text-group">
+                                          <span class="brand-name">Finance Intelligence</span>
+                                          <div class="brand-tagline">Smart Financial Analytics Engine</div>
+                                    </div>
+                                    <div class="brand-live-pill">
+                                          <span class="live-dot"></span>
+                                          LIVE
+                                    </div>
+                              </div>
+                        </div>
+
+                        <!-- Hero Copy -->
+                        <div class="hero">
+                              <div class="hero-eyebrow">AI-Powered Financial Wellness Platform</div>
+                              <h1 class="hero-title">
+                                    Track income,<br />
+                                    cut waste,<br />
+                                    build <em>freedom.</em>
+                              </h1>
+                              <p class="hero-desc">
+                                    Understand where every rupee goes. Our AI analyses your income and expenses, spots
+                                    hidden patterns, and delivers personalised steps toward financial independence.
+                              </p>
+                        </div>
+
+                        <!-- Feature Highlights Strip (replaces stock ticker) -->
+                        <div class="features-strip">
+                              <div class="feature-chip">
+                                    <span class="feature-chip-icon">
+                                          <svg
+                                                viewBox="0 0 18 18"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="14"
+                                                height="14"
+                                          >
+                                                <path
+                                                      d="M3 14l3-4 3 3 3-5 3 4"
+                                                      stroke="currentColor"
+                                                      stroke-width="1.6"
+                                                      stroke-linecap="round"
+                                                      stroke-linejoin="round"
+                                                />
+                                                <path
+                                                      d="M14 7V4h-3"
+                                                      stroke="currentColor"
+                                                      stroke-width="1.4"
+                                                      stroke-linecap="round"
+                                                      stroke-linejoin="round"
+                                                />
+                                          </svg>
+                                    </span>
+                                    <span>Income Tracking</span>
+                              </div>
+                              <div class="feature-chip">
+                                    <span class="feature-chip-icon">
+                                          <svg
+                                                viewBox="0 0 18 18"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="14"
+                                                height="14"
+                                          >
+                                                <circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="1.5" />
+                                                <path
+                                                      d="M9 6v3l2 2"
+                                                      stroke="currentColor"
+                                                      stroke-width="1.5"
+                                                      stroke-linecap="round"
+                                                />
+                                          </svg>
+                                    </span>
+                                    <span>Expense Analysis</span>
+                              </div>
+                              <div class="feature-chip">
+                                    <span class="feature-chip-icon">
+                                          <svg
+                                                viewBox="0 0 18 18"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="14"
+                                                height="14"
+                                          >
+                                                <path
+                                                      d="M9 2a7 7 0 100 14A7 7 0 009 2z"
+                                                      stroke="currentColor"
+                                                      stroke-width="1.5"
+                                                />
+                                                <path
+                                                      d="M9 5v4l3 2"
+                                                      stroke="currentColor"
+                                                      stroke-width="1.5"
+                                                      stroke-linecap="round"
+                                                />
+                                          </svg>
+                                    </span>
+                                    <span>AI Suggestions</span>
+                              </div>
+                              <div class="feature-chip">
+                                    <span class="feature-chip-icon">
+                                          <svg
+                                                viewBox="0 0 18 18"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="14"
+                                                height="14"
+                                          >
+                                                <path
+                                                      d="M9 14V8M5 14v-3M13 14V5"
+                                                      stroke="currentColor"
+                                                      stroke-width="1.6"
+                                                      stroke-linecap="round"
+                                                />
+                                          </svg>
+                                    </span>
+                                    <span>Savings Goals</span>
+                              </div>
+                        </div>
+
+                        <!-- Income vs Expense Illustration -->
+                        <div class="illustration">
+                              <div class="illus-topbar">
+                                    <span class="illus-dot red"></span>
+                                    <span class="illus-dot amber"></span>
+                                    <span class="illus-dot green"></span>
+                                    <span class="illus-title-bar">cashflow.overview — Finance Intelligence</span>
+                                    <span class="illus-live-badge"><span class="live-dot"></span>LIVE</span>
+                              </div>
+
+                              <svg
+                                    class="illus-scene"
+                                    viewBox="0 0 600 150"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                              >
+                                    <defs>
+                                          <linearGradient id="incomeGrad" x1="0" y1="0" x2="0" y2="1">
+                                                <stop offset="0%" stop-color="#10b981" />
+                                                <stop offset="100%" stop-color="#059669" stop-opacity="0.6" />
+                                          </linearGradient>
+                                          <linearGradient id="expenseGrad" x1="0" y1="0" x2="0" y2="1">
+                                                <stop offset="0%" stop-color="#3b82f6" />
+                                                <stop offset="100%" stop-color="#1d4ed8" stop-opacity="0.6" />
+                                          </linearGradient>
+                                    </defs>
+
+                                    <!-- ─ Legend row — top LEFT, clear of tooltip ─ -->
+                                    <rect x="50" y="3" width="8" height="8" rx="2" fill="#10b981" />
+                                    <text
+                                          x="62"
+                                          y="11"
+                                          fill="rgba(255,255,255,0.65)"
+                                          font-size="8.5"
+                                          font-family="DM Sans,sans-serif"
+                                    >
+                                          Income
+                                    </text>
+                                    <rect x="120" y="3" width="8" height="8" rx="2" fill="#3b82f6" />
+                                    <text
+                                          x="132"
+                                          y="11"
+                                          fill="rgba(255,255,255,0.65)"
+                                          font-size="8.5"
+                                          font-family="DM Sans,sans-serif"
+                                    >
+                                          Expenses
+                                    </text>
+                                    <line
+                                          x1="203"
+                                          y1="7"
+                                          x2="218"
+                                          y2="7"
+                                          stroke="#f59e0b"
+                                          stroke-width="1.8"
+                                          stroke-dasharray="3,2.5"
+                                          stroke-linecap="round"
+                                    />
+                                    <text
+                                          x="223"
+                                          y="11"
+                                          fill="rgba(255,255,255,0.65)"
+                                          font-size="8.5"
+                                          font-family="DM Sans,sans-serif"
+                                    >
+                                          Savings
+                                    </text>
+
+                                    <!-- ─ Tooltip — top RIGHT, well away from legend ─ -->
+                                    <rect
+                                          x="478"
+                                          y="1"
+                                          width="116"
+                                          height="28"
+                                          rx="6"
+                                          fill="rgba(16,185,129,0.13)"
+                                          stroke="rgba(16,185,129,0.38)"
+                                          stroke-width="0.9"
+                                    />
+                                    <text
+                                          x="488"
+                                          y="12"
+                                          fill="rgba(16,185,129,0.8)"
+                                          font-size="7.5"
+                                          font-family="JetBrains Mono,monospace"
+                                          letter-spacing="0.04em"
+                                    >
+                                          INCOME ↑ JUN
+                                    </text>
+                                    <text
+                                          x="488"
+                                          y="24"
+                                          fill="#10b981"
+                                          font-size="10"
+                                          font-family="JetBrains Mono,monospace"
+                                          font-weight="600"
+                                    >
+                                          ₹92,000
+                                    </text>
+
+                                    <!-- ─ Grid lines (content area: y=34 … y=122) ─ -->
+                                    <line
+                                          x1="45"
+                                          y1="34"
+                                          x2="595"
+                                          y2="34"
+                                          stroke="rgba(255,255,255,0.04)"
+                                          stroke-width="1"
+                                    />
+                                    <line
+                                          x1="45"
+                                          y1="58"
+                                          x2="595"
+                                          y2="58"
+                                          stroke="rgba(255,255,255,0.055)"
+                                          stroke-width="1"
+                                    />
+                                    <line
+                                          x1="45"
+                                          y1="82"
+                                          x2="595"
+                                          y2="82"
+                                          stroke="rgba(255,255,255,0.055)"
+                                          stroke-width="1"
+                                    />
+                                    <line
+                                          x1="45"
+                                          y1="106"
+                                          x2="595"
+                                          y2="106"
+                                          stroke="rgba(255,255,255,0.055)"
+                                          stroke-width="1"
+                                    />
+
+                                    <!-- ─ Y-axis labels ─ -->
+                                    <text
+                                          x="0"
+                                          y="37"
+                                          fill="rgba(148,163,184,0.45)"
+                                          font-size="8"
+                                          font-family="JetBrains Mono,monospace"
+                                    >
+                                          80K
+                                    </text>
+                                    <text
+                                          x="0"
+                                          y="61"
+                                          fill="rgba(148,163,184,0.45)"
+                                          font-size="8"
+                                          font-family="JetBrains Mono,monospace"
+                                    >
+                                          60K
+                                    </text>
+                                    <text
+                                          x="0"
+                                          y="85"
+                                          fill="rgba(148,163,184,0.45)"
+                                          font-size="8"
+                                          font-family="JetBrains Mono,monospace"
+                                    >
+                                          40K
+                                    </text>
+                                    <text
+                                          x="0"
+                                          y="109"
+                                          fill="rgba(148,163,184,0.45)"
+                                          font-size="8"
+                                          font-family="JetBrains Mono,monospace"
+                                    >
+                                          20K
+                                    </text>
+
+                                    <!-- ─ Income bars (green) — baseline y=106, growing up ─ -->
+                                    <rect
+                                          class="bar-income"
+                                          x="55"
+                                          y="42"
+                                          width="21"
+                                          height="64"
+                                          rx="3.5"
+                                          fill="url(#incomeGrad)"
+                                    />
+                                    <rect
+                                          class="bar-income"
+                                          x="148"
+                                          y="36"
+                                          width="21"
+                                          height="70"
+                                          rx="3.5"
+                                          fill="url(#incomeGrad)"
+                                    />
+                                    <rect
+                                          class="bar-income"
+                                          x="241"
+                                          y="30"
+                                          width="21"
+                                          height="76"
+                                          rx="3.5"
+                                          fill="url(#incomeGrad)"
+                                    />
+                                    <rect
+                                          class="bar-income"
+                                          x="334"
+                                          y="24"
+                                          width="21"
+                                          height="82"
+                                          rx="3.5"
+                                          fill="url(#incomeGrad)"
+                                    />
+                                    <rect
+                                          class="bar-income"
+                                          x="427"
+                                          y="19"
+                                          width="21"
+                                          height="87"
+                                          rx="3.5"
+                                          fill="url(#incomeGrad)"
+                                    />
+                                    <rect
+                                          class="bar-income"
+                                          x="520"
+                                          y="14"
+                                          width="21"
+                                          height="92"
+                                          rx="3.5"
+                                          fill="url(#incomeGrad)"
+                                    />
+
+                                    <!-- ─ Expense bars (blue) — always shorter than income ─ -->
+                                    <rect
+                                          class="bar-expense"
+                                          x="79"
+                                          y="60"
+                                          width="21"
+                                          height="46"
+                                          rx="3.5"
+                                          fill="url(#expenseGrad)"
+                                          opacity="0.9"
+                                    />
+                                    <rect
+                                          class="bar-expense"
+                                          x="172"
+                                          y="64"
+                                          width="21"
+                                          height="42"
+                                          rx="3.5"
+                                          fill="url(#expenseGrad)"
+                                          opacity="0.9"
+                                    />
+                                    <rect
+                                          class="bar-expense"
+                                          x="265"
+                                          y="54"
+                                          width="21"
+                                          height="52"
+                                          rx="3.5"
+                                          fill="url(#expenseGrad)"
+                                          opacity="0.9"
+                                    />
+                                    <rect
+                                          class="bar-expense"
+                                          x="358"
+                                          y="58"
+                                          width="21"
+                                          height="48"
+                                          rx="3.5"
+                                          fill="url(#expenseGrad)"
+                                          opacity="0.9"
+                                    />
+                                    <rect
+                                          class="bar-expense"
+                                          x="451"
+                                          y="50"
+                                          width="21"
+                                          height="56"
+                                          rx="3.5"
+                                          fill="url(#expenseGrad)"
+                                          opacity="0.9"
+                                    />
+                                    <rect
+                                          class="bar-expense"
+                                          x="544"
+                                          y="44"
+                                          width="21"
+                                          height="62"
+                                          rx="3.5"
+                                          fill="url(#expenseGrad)"
+                                          opacity="0.9"
+                                    />
+
+                                    <!-- ─ Savings trend line (amber dashed) ─ -->
+                                    <path
+                                          class="savings-line"
+                                          d="M 65 82 L 158 80 L 251 73 L 344 68 L 437 60 L 530 54"
+                                          stroke="#f59e0b"
+                                          stroke-width="2"
+                                          fill="none"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-dasharray="5,4"
+                                    />
+
+                                    <!-- ─ Month labels ─ -->
+                                    <text
+                                          x="59"
+                                          y="122"
+                                          fill="rgba(148,163,184,0.5)"
+                                          font-size="8"
+                                          font-family="JetBrains Mono,monospace"
+                                    >
+                                          JAN
+                                    </text>
+                                    <text
+                                          x="152"
+                                          y="122"
+                                          fill="rgba(148,163,184,0.5)"
+                                          font-size="8"
+                                          font-family="JetBrains Mono,monospace"
+                                    >
+                                          FEB
+                                    </text>
+                                    <text
+                                          x="245"
+                                          y="122"
+                                          fill="rgba(148,163,184,0.5)"
+                                          font-size="8"
+                                          font-family="JetBrains Mono,monospace"
+                                    >
+                                          MAR
+                                    </text>
+                                    <text
+                                          x="338"
+                                          y="122"
+                                          fill="rgba(148,163,184,0.5)"
+                                          font-size="8"
+                                          font-family="JetBrains Mono,monospace"
+                                    >
+                                          APR
+                                    </text>
+                                    <text
+                                          x="431"
+                                          y="122"
+                                          fill="rgba(148,163,184,0.5)"
+                                          font-size="8"
+                                          font-family="JetBrains Mono,monospace"
+                                    >
+                                          MAY
+                                    </text>
+                                    <text
+                                          x="524"
+                                          y="122"
+                                          fill="rgba(148,163,184,0.5)"
+                                          font-size="8"
+                                          font-family="JetBrains Mono,monospace"
+                                    >
+                                          JUN
+                                    </text>
+                              </svg>
+                        </div>
+
+                        <!-- Analytics Cards — income/expense themed -->
+                        <div class="analytics-cards">
+                              <div class="a-card">
+                                    <div class="a-card-label">Monthly Income</div>
+                                    <div class="a-card-value" data-target="92000" data-prefix="₹">₹92,000</div>
+                                    <div class="a-card-badge badge-up">▲ 8.3%</div>
+                              </div>
+                              <div class="a-card">
+                                    <div class="a-card-label">Monthly Expenses</div>
+                                    <div class="a-card-value green" data-target="54200" data-prefix="₹">₹54,200</div>
+                                    <div class="a-card-badge badge-up">▼ 4.1% saved</div>
+                              </div>
+                              <div class="a-card">
+                                    <div class="a-card-label">Savings Rate</div>
+                                    <div class="a-card-value amber" data-target="41" data-suffix="%">41%</div>
+                                    <div class="a-card-badge badge-neutral">Excellent</div>
+                              </div>
+                        </div>
+
+                        <!-- Charts Row — IDs MUST match auth-charts.js exactly -->
+                        <div class="charts-row">
+                              <div class="chart-card">
+                                    <div class="chart-label">Monthly Spending Trend</div>
+                                    <div class="chart-wrap">
+                                          <canvas id="lineChart"></canvas>
+                                    </div>
+                              </div>
+                              <div class="chart-card">
+                                    <div class="chart-label">Expense Distribution</div>
+                                    <div class="chart-wrap">
+                                          <canvas id="donutChart"></canvas>
+                                    </div>
+                              </div>
+                        </div>
+                  </section>
+
+                  <!-- ═══════════════════════════════════════════════
+                        RIGHT PANEL — Login (40%) — NO LOGO
+                  ════════════════════════════════════════════════ -->
+                  <section class="right login-right">
+                        <div class="login-responsive-brand" aria-label="Finance Intelligence">
+                              <div class="login-responsive-brand__icon" aria-hidden="true">
+                                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                          <defs>
+                                                <linearGradient id="hexGradLoginResponsive" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                                                      <stop offset="0%" stop-color="#3b82f6" />
+                                                      <stop offset="100%" stop-color="#1d4ed8" />
+                                                </linearGradient>
+                                          </defs>
+                                          <path d="M24 2L42 12V36L24 46L6 36V12L24 2Z" fill="url(#hexGradLoginResponsive)" />
+                                          <path d="M15 32 L19 24 L23 28 L27 19 L33 23" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                                          <circle cx="33" cy="23" r="2.5" fill="white" />
+                                    </svg>
+                              </div>
+                              <span>Finance Intelligence</span>
+                        </div>
+                        <div class="auth-box">
+                              <h2 class="auth-heading">Welcome back.</h2>
+                              <p class="auth-sub">Sign in to your personal finance dashboard.</p>
+
+                              <form id="loginForm">
+                                    <div class="form-group" id="fg-email">
+                                          <label for="email">Email Address</label>
+                                          <div class="input-wrap">
+                                                <input
+                                                      type="email"
+                                                      id="email"
+                                                      placeholder="you@company.com"
+                                                      required
+                                                      autocomplete="email"
+                                                />
+                                                <span class="field-icon" id="emailIcon"></span>
+                                          </div>
+                                          <div class="field-msg" id="emailMsg"></div>
+                                    </div>
+
+                                    <div class="form-group" id="fg-password">
+                                          <label for="password">Password</label>
+                                          <div class="input-wrap">
+                                                <input
+                                                      type="password"
+                                                      id="password"
+                                                      placeholder="Enter your password"
+                                                      required
+                                                      autocomplete="current-password"
+                                                />
+                                                <button
+                                                      type="button"
+                                                      class="toggle-pwd"
+                                                      id="togglePwd"
+                                                      aria-label="Show password"
+                                                >
+                                                      <svg
+                                                            id="eyeShow"
+                                                            viewBox="0 0 24 24"
+                                                            fill="none"
+                                                            stroke="currentColor"
+                                                            stroke-width="1.8"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                      >
+                                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                                            <circle cx="12" cy="12" r="3" />
+                                                      </svg>
+                                                      <svg
+                                                            id="eyeHide"
+                                                            viewBox="0 0 24 24"
+                                                            fill="none"
+                                                            stroke="currentColor"
+                                                            stroke-width="1.8"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            style="display: none"
+                                                      >
+                                                            <path
+                                                                  d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94"
+                                                            />
+                                                            <path
+                                                                  d="M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19"
+                                                            />
+                                                            <line x1="1" y1="1" x2="23" y2="23" />
+                                                      </svg>
+                                                </button>
+                                          </div>
+                                          <div class="field-msg" id="passwordMsg"></div>
+                                    </div>
+
+                                    <div class="form-options">
+                                          <label class="remember-wrap">
+                                                <input type="checkbox" id="rememberMe" />
+                                                <span>Remember me</span>
+                                          </label>
+                                          <a href="forgot-password.html" class="forgot-link">Forgot password?</a>
+                                    </div>
+
+                                    <button type="submit" class="btn-login">Log in to Dashboard</button>
+                              </form>
+
+                              <div class="divider">
+                                    <span class="divider-line"></span>
+                                    <span class="divider-text">or</span>
+                                    <span class="divider-line"></span>
+                              </div>
+
+                              <p class="signup-row">
+                                    Don't have an account?
+                                    <a href="signup.html" class="signup-link">Create account</a>
+                              </p>
+                        </div>
+                  </section>
+            </div>
+
+            <script src="JS/login-api.js"></script>
+            <script src="JS/auth-charts.js"></script>
+            <script src="JS/login.js"></script>
+      </body>
+</html>

@@ -1,0 +1,107 @@
+/* ================================
+      BUTTONS
+================================ */
+
+.btn-primary {
+      background-color: var(--accent-color);
+      color: #ffffff;
+      padding: 12px 20px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-weight: 500;
+}
+
+.btn-secondary {
+      background: transparent;
+      color: var(--accent-color);
+      border: 1px solid var(--accent-color);
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+}
+
+/* ================================
+      CARDS
+================================ */
+
+.card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 24px;
+      transition:
+            box-shadow 0.25s ease,
+            border-color 0.25s ease;
+}
+
+.btn-primary,
+.btn-secondary {
+      transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+      transform: translateY(-2px);
+}
+
+.card:focus-within {
+      border-color: var(--accent-color);
+}
+
+/* GLOBAL  */
+.pl-profit {
+      color: #22c55e; /* green */
+}
+
+.pl-loss {
+      color: #ef4444; /* red */
+}
+
+/* ACTION BUTTONS (EDIT / DELETE) */
+
+.expense-actions button,
+.actions button {
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      padding: 6px;
+      border-radius: 6px;
+      transition: 0.2s;
+}
+
+/* EDIT BUTTON */
+.edit-income {
+      color: #f97316;
+}
+
+.edit-income:hover {
+      background: rgba(249, 115, 22, 0.1);
+}
+
+/* DELETE BUTTON */
+.delete-income {
+      color: #ef4444;
+}
+
+.delete-income:hover {
+      background: rgba(239, 68, 68, 0.1);
+}
+
+/* ================================
+      INCOME AMOUNT COLOR
+================================ */
+
+.income-value {
+      color: #22c55e; /* green */
+      font-weight: 600;
+}
+
+/* Table view income amount */
+#incomeTable td:nth-child(4) {
+      color: #22c55e;
+      font-weight: 600;
+}

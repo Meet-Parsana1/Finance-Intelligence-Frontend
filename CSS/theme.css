@@ -1,0 +1,138 @@
+/* ================================
+      LIGHT THEME (DEFAULT)
+================================ */
+
+/* :root {
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+
+      --border-color: #e2e8f0;
+      --accent-color: #2563eb;
+
+      --success-color: #16a34a;
+      --warning-color: #f59e0b;
+      --error-color: #dc2626;
+} */
+
+:root {
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+
+      --border-color: #e2e8f0;
+      --accent-color: #2563eb;
+
+      --success-color: #16a34a;
+      --warning-color: #f59e0b;
+      --error-color: #dc2626;
+
+      /* ✅ ADD THESE (MAPPING) */
+      --bg-card: var(--card-bg);
+      --bg-panel: var(--card-bg);
+
+      --border: var(--border-color);
+      --border-hover: #cbd5f5;
+
+      --accent: var(--accent-color);
+
+      --green: var(--success-color);
+      --amber: var(--warning-color);
+      --red: var(--error-color);
+
+      --green-glow: rgba(22, 163, 74, 0.12);
+      --amber-glow: rgba(245, 158, 11, 0.12);
+      --red-glow: rgba(220, 38, 38, 0.12);
+
+      --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* [data-theme='dark'] {
+      --bg-color: #050505;
+      --card-bg: #141414;
+      --glass-bg: rgba(255, 255, 255, 0.04);
+      --border-color: #262626;
+      --text-primary: #e6e6e6;
+      --text-secondary: #9ca3af;
+      --accent-color: #3b82f6;
+      --success-color: #22c55e;
+      --warning-color: #f59e0b;
+      --error-color: #ef4444;
+      --surface-bg: #0f0f0f;
+} */
+
+[data-theme='dark'] {
+      --bg-color: #050505;
+      --card-bg: #141414;
+
+      --glass-bg: rgba(255, 255, 255, 0.04);
+      --border-color: #262626;
+
+      --text-primary: #e6e6e6;
+      --text-secondary: #9ca3af;
+
+      --accent-color: #3b82f6;
+
+      --success-color: #22c55e;
+      --warning-color: #f59e0b;
+      --error-color: #ef4444;
+
+      --surface-bg: #0f0f0f;
+
+      /* ✅ ADD THESE */
+      --bg-card: var(--card-bg);
+      --bg-panel: #0f0f0f;
+
+      --border: var(--border-color);
+      --border-hover: #3a3a3a;
+
+      --accent: var(--accent-color);
+
+      --green: var(--success-color);
+      --amber: var(--warning-color);
+      --red: var(--error-color);
+
+      --green-glow: rgba(34, 197, 94, 0.12);
+      --amber-glow: rgba(245, 158, 11, 0.12);
+      --red-glow: rgba(239, 68, 68, 0.12);
+
+      --shadow-sm: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* ===============================
+      DROPDOWN FIX (LIGHT + DARK)
+================================ */
+
+/* default dropdown */
+select {
+      background: var(--card-bg);
+      color: var(--text-primary);
+      border: 1px solid var(--border-color);
+}
+
+/* dropdown options */
+select option {
+      background: var(--card-bg);
+      color: var(--text-primary);
+}
+
+/* DARK MODE dropdown */
+[data-theme='dark'] select option {
+      background: #0f0f0f;
+      color: #e5e7eb;
+}
+
+/* selected option */
+[data-theme='dark'] select option:checked {
+      background: #3b82f6;
+      color: white;
+}
+
+/* hover option */
+[data-theme='dark'] select option:hover {
+      background: #1f2937;
+}

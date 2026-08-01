@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+      <head>
+            <meta charset="UTF-8" />
+            <title>Income | Finance Intelligence</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+            <!-- CSS -->
+            <link rel="stylesheet" href="CSS/base.css" />
+            <link rel="stylesheet" href="CSS/theme.css" />
+            <link rel="stylesheet" href="CSS/components.css" />
+            <link rel="stylesheet" href="CSS/layout.css" />
+            <link rel="stylesheet" href="CSS/dashboard.css" />
+
+            <link rel="stylesheet" href="CSS/ledger-pages.css" />
+      </head>
+            
+      <body class="ledger-page incomes-page">
+            <!-- ================= iOS 26 FLOATING GLASS NAVBAR ================= -->
+
+            <nav class="glass-navbar">
+                  <ul class="glass-nav-items">
+                        <li class="nav-item" onclick="window.location.href = 'dashboard.html'">Dashboard</li>
+
+                        <li class="nav-item" onclick="window.location.href = 'expenses.html'">Expenses</li>
+
+                        <li class="nav-item active">Income</li>
+
+                        <!-- <li class="nav-item" onclick="window.location.href = 'reports.html'">Reports</li> -->
+                  </ul>
+            </nav>
+
+            <!-- ================= BRAND HEADER ================= -->
+
+            <header class="navbar">
+                  <div class="navbar-left">
+                        <span class="navbar-title">Finance Intelligence</span>
+                  </div>
+
+                  <div class="navbar-right">
+                        <button id="theme-toggle" class="theme-btn">
+                              <span class="theme-icon">🌙</span>
+                        </button>
+                  </div>
+            </header>
+
+            <!-- ================= MAIN ================= -->
+
+            <main class="page-container ledger-container">
+                  <!-- ========= PAGE HEADER ========= -->
+
+                  <section class="page-header ledger-header">
+                        <div class="ledger-header-copy">
+                              <h2>Income</h2>
+                              <p class="page-subtitle">Track and manage your earnings</p>
+                        </div>
+
+                        <div class="ledger-header-actions">
+                              <a href="add-income.html" class="primary-btn ledger-add-btn">+ Add Income</a>
+                        </div>
+                  </section>
+
+                  <!-- ========= FILTERS ========= -->
+
+                  <section class="expense-controls glass ledger-toolbar">
+                        <div class="search-box">
+                              <input type="text" id="income-search" placeholder="Search income..." />
+                        </div>
+
+                        <div class="filter-pills" id="incomeFilterPills">
+                              <button class="filter-pill active" data-filter="all">All</button>
+                              <button class="filter-pill" data-filter="Bank">Bank</button>
+
+                              <button class="filter-pill" data-filter="Cash">Cash</button>
+
+                              <button class="filter-pill" data-filter="10000+">₹10000+</button>
+                        </div>
+                        <p class="ledger-filter-scroll-hint" aria-hidden="true">Swipe categories</p>
+
+                        <div class="expense-count" id="incomeCount"></div>
+
+                        <div class="view-toggle">
+                              <button id="income-card-view" class="view-btn active">⬛</button>
+
+                              <button id="income-table-view" class="view-btn">☰</button>
+                        </div>
+                  </section>
+
+                  <!-- ========= CARD VIEW ========= -->
+
+                  <section class="expense-list" id="incomeList"></section>
+
+                  <!-- ========= TABLE VIEW ========= -->
+
+                  <section class="expense-table hidden" id="incomeTable">
+                        <div class="ledger-table-scroll">
+                        <table>
+                              <thead>
+                                    <tr>
+                                          <th>Date</th>
+                                          <th>Source</th>
+                                          <th>Category</th>
+                                          <th>Amount</th>
+                                          <th>Mode</th>
+                                          <th style="text-align: center">Actions</th>
+                                    </tr>
+                              </thead>
+
+                              <tbody id="incomeTableBody"></tbody>
+                        </table>
+                        </div>
+                        <p class="ledger-table-scroll-hint" aria-hidden="true">Swipe table to view all columns</p>
+                  </section>
+
+                  <section class="ledger-pagination" id="incomePagination">
+                        <button type="button" class="pagination-btn" id="incomePaginationPrev">Previous</button>
+                        <p class="pagination-status" id="incomePaginationStatus">Showing 0-0 of 0</p>
+                        <button type="button" class="pagination-btn" id="incomePaginationNext">Next 10</button>
+                  </section>
+            </main>
+
+            <!-- ================= EDIT MODAL ================= -->
+
+            <div class="modal-overlay hidden" id="editIncomeModal">
+                  <div class="modal glass">
+                        <h3>✏️ Edit Income</h3>
+
+                        <form id="editIncomeForm">
+                              <input type="text" id="editIncomeSource" placeholder="Income Source" required />
+
+                              <input type="number" id="editIncomeAmount" placeholder="Amount" required />
+
+                              <select id="editIncomeCategory" required></select>
+
+                              <select id="editIncomeMode" required>
+                                    <option value="Bank">Bank</option>
+
+                                    <option value="Cash">Cash</option>
+                              </select>
+
+                              <input type="date" id="editIncomeDate" required />
+
+                              <div class="modal-actions">
+                                    <button type="button" class="btn ghost" id="cancelIncomeEdit">Cancel</button>
+
+                                    <button type="submit" class="btn primary">Save</button>
+                              </div>
+                        </form>
+                  </div>
+            </div>
+
+            <!-- ================= JS ================= -->
+
+            <script src="JS/income-categories.js"></script>
+            <script src="JS/incomes.js"></script>
+
+            <script src="JS/theme-toggle.js"></script>
+
+            <script src="https://unpkg.com/lucide@latest"></script>
+
+            <script>
+                  lucide.createIcons();
+            </script>
+      </body>
+</html>
