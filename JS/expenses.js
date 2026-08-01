@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       const token = localStorage.getItem('token');
 
-      const res = await fetch('http://localhost:5000/api/expenses', {
+      const res = await fetch('https://finance-intelligence-q3zx.onrender.com/api/expenses', {
             headers: {
                   Authorization: 'Bearer ' + token,
             },
@@ -353,7 +353,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       editForm?.addEventListener('submit', async (e) => {
             e.preventDefault();
 
-            await fetch(`http://localhost:5000/api/expenses/${editingIndex}`, {
+            await fetch(`https://finance-intelligence-q3zx.onrender.com/api/expenses/${editingIndex}`, {
                   method: 'PUT',
                   headers: {
                         'Content-Type': 'application/json',
@@ -380,7 +380,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             if (!confirm('Delete this expense?')) return;
 
-            await fetch(`http://localhost:5000/api/expenses/${id}`, {
+            await fetch(`https://finance-intelligence-q3zx.onrender.com/api/expenses/${id}`, {
                   method: 'DELETE',
                   headers: {
                         Authorization: 'Bearer ' + token,

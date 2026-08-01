@@ -560,7 +560,7 @@ function getPLFilteredData(expenses = [], incomes = []) {
 }
 
 async function loadCategoryChart(range) {
-      const res = await fetch(`http://localhost:5000/api/expenses/category-summary?range=${range}`, {
+      const res = await fetch(`https://finance-intelligence-q3zx.onrender.com/api/expenses/category-summary?range=${range}`, {
             headers: { Authorization: 'Bearer ' + token },
       });
 
@@ -600,7 +600,7 @@ async function loadCategoryChart(range) {
 }
 
 async function loadMonthlyTrend(range) {
-      const res = await fetch(`http://localhost:5000/api/expenses/monthly-summary?range=${range}`, {
+      const res = await fetch(`https://finance-intelligence-q3zx.onrender.com/api/expenses/monthly-summary?range=${range}`, {
             headers: { Authorization: 'Bearer ' + token },
       });
 
@@ -1215,7 +1215,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       const role = user.role;
       // const token = localStorage.getItem('token');
 
-      const res = await fetch('http://localhost:5000/api/expenses', {
+      const res = await fetch('https://finance-intelligence-q3zx.onrender.com/api/expenses', {
             headers: {
                   Authorization: 'Bearer ' + token,
             },
@@ -1224,7 +1224,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       const expenses = await res.json();
       dashboardExpensesCache = Array.isArray(expenses) ? expenses : [];
 
-      const incomeRes = await fetch('http://localhost:5000/api/income', {
+      const incomeRes = await fetch('https://finance-intelligence-q3zx.onrender.com/api/income', {
             headers: {
                   Authorization: 'Bearer ' + token,
             },
@@ -1261,7 +1261,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
 
       if (role === 'student') {
-            const budgetRes = await fetch('http://localhost:5000/api/budget', {
+            const budgetRes = await fetch('https://finance-intelligence-q3zx.onrender.com/api/budget', {
                   headers: {
                         Authorization: 'Bearer ' + token,
                   },
@@ -3170,7 +3170,7 @@ async function submitBudget(value) {
       const token = localStorage.getItem('token');
 
       try {
-            const res = await fetch('http://localhost:5000/api/budget', {
+            const res = await fetch('https://finance-intelligence-q3zx.onrender.com/api/budget', {
                   method: 'POST',
                   headers: {
                         'Content-Type': 'application/json',
@@ -3238,7 +3238,7 @@ async function loadInsights(expenses = [], incomes = []) {
       }
 
       try {
-            const res = await fetch('http://localhost:5000/api/ai/insights', {
+            const res = await fetch('https://finance-intelligence-q3zx.onrender.com/api/ai/insights', {
                   headers: {
                         Authorization: 'Bearer ' + token,
                   },

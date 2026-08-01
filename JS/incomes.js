@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       const token = localStorage.getItem('token');
 
-      const res = await fetch('http://localhost:5000/api/income', {
+      const res = await fetch('https://finance-intelligence-q3zx.onrender.com/api/income', {
             headers: {
                   Authorization: 'Bearer ' + token,
             },
@@ -358,7 +358,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       editForm?.addEventListener('submit', async (e) => {
             e.preventDefault();
 
-            await fetch(`http://localhost:5000/api/income/${editingIndex}`, {
+            await fetch(`https://finance-intelligence-q3zx.onrender.com/api/income/${editingIndex}`, {
                   method: 'PUT',
                   headers: {
                         'Content-Type': 'application/json',
@@ -385,7 +385,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             if (!confirm('Are you sure you want to delete this income?')) return;
 
-            await fetch(`http://localhost:5000/api/income/${id}`, {
+            await fetch(`https://finance-intelligence-q3zx.onrender.com/api/income/${id}`, {
                   method: 'DELETE',
                   headers: {
                         Authorization: 'Bearer ' + token,

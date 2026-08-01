@@ -286,7 +286,7 @@
             submitBtn.textContent = 'Creating account…';
 
             // Real API Call
-            fetch('http://localhost:5000/api/auth/register', {
+            fetch('https://finance-intelligence-q3zx.onrender.com/api/auth/register', {
                   method: 'POST',
                   headers: {
                         'Content-Type': 'application/json',

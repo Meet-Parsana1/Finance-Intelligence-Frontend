@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       async function getAICategory(description) {
             try {
-                  const res = await fetch('http://localhost:5000/api/ai/category', {
+                  const res = await fetch('https://finance-intelligence-q3zx.onrender.com/api/ai/category', {
                         method: 'POST',
                         headers: {
                               'Content-Type': 'application/json',
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const token = localStorage.getItem('token');
 
             try {
-                  const response = await fetch('http://localhost:5000/api/expenses', {
+                  const response = await fetch('https://finance-intelligence-q3zx.onrender.com/api/expenses', {
                         method: 'POST',
                         headers: {
                               'Content-Type': 'application/json',
