@@ -1,13 +1,13 @@
-# ⚛️ Finance Intelligence Frontend
+# 💻 Finance Intelligence Frontend
 
 <div align="center">
 
-## Modern React Frontend for Finance Intelligence
+### Frontend of the Finance Intelligence Platform
 
-A responsive and interactive frontend built with **React.js** that delivers personalized dashboards, AI-powered financial insights, and an intuitive user experience.
+A responsive and modern frontend built using **HTML5, CSS3, and JavaScript** that enables users to manage their finances through interactive dashboards, AI-powered insights, and an intuitive user experience.
 
-🌐 **Live Application**  
-https://meet-parsana1.github.io/Finance-Intelligence-Frontend/
+🌐 **Live Demo**  
+https://finance-intelligence-xi.vercel.app/
 
 🔗 **Main Repository**  
 https://github.com/Meet-Parsana1/Finance-Intelligence
@@ -18,11 +18,9 @@ https://github.com/Meet-Parsana1/Finance-Intelligence
 
 # 📖 About
 
-This repository contains the **React frontend** of the Finance Intelligence project.
+This repository contains the complete frontend of **Finance Intelligence**, an AI-powered personal finance platform.
 
-The frontend communicates with the backend API to provide a modern, fast, and responsive user interface for personal finance management.
-
-Users can securely log in, manage their income and expenses, view AI-generated insights, and interact with personalized dashboards based on their selected role.
+The application communicates with the backend API to provide a smooth and interactive experience for users. It focuses on usability, responsive design, data visualization, and personalized dashboards.
 
 ---
 
@@ -32,40 +30,35 @@ Users can securely log in, manage their income and expenses, view AI-generated i
 - 👤 Role-Based Dashboards
 - 💰 Income Management
 - 💳 Expense Management
-- 🤖 AI Expense Categorization
-- 💡 AI Financial Insights
-- 📊 Interactive Charts
-- 🌙 Dark / Light Theme
+- 🤖 AI-Powered Expense Categorization
+- 💡 Personalized AI Financial Insights
+- 📊 Interactive Charts & Analytics
+- 🌙 Dark / Light Mode
 - 📱 Fully Responsive Design
 
 ---
 
-# 🛠 Tech Stack
+# 🛠 Technologies Used
 
-- React.js
-- JavaScript (ES6+)
 - HTML5
 - CSS3
+- JavaScript (ES6)
 - Chart.js
-- Axios
-- React Router
+- Fetch API
 
 ---
 
-# 📁 Folder Structure
+# 📂 Folder Structure
 
 ```text
-Finance-Intelligence-Frontend
+Frontend
 │
-├── public
-├── src
-│   ├── assets
-│   ├── components
-│   ├── pages
-│   ├── styles
-│   └── utils
-│
-├── package.json
+├── assets
+├── css
+├── images
+├── js
+├── pages
+├── index.html
 └── README.md
 ```
 
@@ -73,69 +66,53 @@ Finance-Intelligence-Frontend
 
 # 📸 Screenshots
 
-## Dashboard
+## 🏠 Landing Page
 
 (Add Screenshot)
 
 ---
 
-## Income Management
+## 📊 Dashboard
 
 (Add Screenshot)
 
 ---
 
-## Expense Management
+## 💰 Income Management
 
 (Add Screenshot)
 
 ---
 
-## AI Insights
+## 💳 Expense Management
 
 (Add Screenshot)
 
 ---
 
-# 🚀 Getting Started
+## 🤖 AI Insights
 
-## Clone Repository
+(Add Screenshot)
+
+---
+
+# 🚀 Running the Project
+
+Clone the repository
 
 ```bash
 git clone https://github.com/Meet-Parsana1/Finance-Intelligence-Frontend.git
 ```
 
----
+Open the project folder.
 
-## Install Dependencies
-
-```bash
-npm install
-```
-
----
-
-## Run Development Server
-
-```bash
-npm run dev
-```
-
----
-
-## Build for Production
-
-```bash
-npm run build
-```
+Launch `index.html` using **Live Server** in VS Code or open it directly in your browser.
 
 ---
 
 # 🔗 Backend Repository
 
-This frontend works with the Finance Intelligence backend.
-
-Main Repository:
+This frontend works together with the backend available here:
 
 https://github.com/Meet-Parsana1/Finance-Intelligence
 
@@ -155,6 +132,6 @@ https://linkedin.com/in/meet-parsana
 
 # ⭐ Support
 
-If you enjoyed this project, consider giving this repository a ⭐.
+If you found this project helpful, consider giving this repository a ⭐.
 
-Every star is appreciated!
+It really helps and motivates me to build more projects.
