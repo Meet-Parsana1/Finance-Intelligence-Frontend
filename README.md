@@ -68,31 +68,31 @@ Frontend
 
 ## 🏠 Landing Page
 
-(Add Screenshot)
+<img width="1920" height="1080" alt="Landing Page" src="https://github.com/user-attachments/assets/dd1fc042-dcce-4a8c-b184-f5d2edb5b71a" />
 
 ---
 
 ## 📊 Dashboard
 
-(Add Screenshot)
+<img width="1920" height="1080" alt="Student Dashboard" src="https://github.com/user-attachments/assets/3cdef2d2-32af-4e61-b4c9-28875cd65ac2" />
 
 ---
 
 ## 💰 Income Management
 
-(Add Screenshot)
+<img width="1920" height="1080" alt="Incomes Page" src="https://github.com/user-attachments/assets/fdc11e10-115b-4faf-bf38-0f99e36bd257" />
 
 ---
 
 ## 💳 Expense Management
 
-(Add Screenshot)
+<img width="1920" height="1080" alt="Expense Page" src="https://github.com/user-attachments/assets/4c49be3a-bd3e-4df6-85be-856f7654fae4" />
 
 ---
 
 ## 🤖 AI Insights
 
-(Add Screenshot)
+<img width="1920" height="1080" alt="Insights Section" src="https://github.com/user-attachments/assets/cf81bec3-a7c8-4332-97fa-01dc52c47646" />
 
 ---
 
