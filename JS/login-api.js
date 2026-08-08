@@ -55,12 +55,14 @@ function initialiseLogin() {
                   }
 
                   const rememberMe = Boolean(rememberMeCheckbox?.checked);
-                  const targetStorage = rememberMe ? localStorage : sessionStorage;
-                  const otherStorage = rememberMe ? sessionStorage : localStorage;
-                  otherStorage.removeItem('token');
-                  otherStorage.removeItem('currentUser');
-                  targetStorage.setItem('token', data.token);
-                  targetStorage.setItem('currentUser', JSON.stringify(data.user));
+
+                  // The dashboard and ledger pages read authentication from localStorage.
+                  // Keep the auth session in one place so a successful login cannot
+                  // be redirected straight back to login.html.
+                  sessionStorage.removeItem('token');
+                  sessionStorage.removeItem('currentUser');
+                  localStorage.setItem('token', data.token);
+                  localStorage.setItem('currentUser', JSON.stringify(data.user));
 
                   if (rememberMe) {
                         localStorage.setItem('rememberedEmail', emailInput.value.trim());
